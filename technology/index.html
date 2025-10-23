@@ -1,0 +1,677 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>WWII Technology</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #1a3a52;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header Styles */
+.site-header {
+  background-color: #1a3a52;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.site-logo h1 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.site-logo:hover {
+  opacity: 0.9;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Navigation Styles */
+.site-nav {
+  background-color: #1a3a52;
+  padding: 0 20px;
+}
+
+.nav-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list a {
+  display: block;
+  padding: 12px 15px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-size: 0.95em;
+}
+
+.nav-list a:hover {
+  color: #e8722d;
+  background-color: rgba(232, 114, 45, 0.1);
+}
+
+.nav-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0f2436;
+  flex-direction: column;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-submenu:hover .submenu {
+  display: flex;
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenu li:last-child a {
+  border-bottom: none;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #0f2436;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e8722d;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.3s ease;
+  }
+
+  .site-nav.active {
+    max-height: 500px;
+    padding: 15px 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .submenu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-submenu.active .submenu {
+    display: flex;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* WWII Technology - Page CSS */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 50px;
+  border-bottom: 3px solid #1a3a52;
+  padding-bottom: 30px;
+}
+
+.page-header h1 {
+  font-size: 2.5em;
+  color: #1a3a52;
+  margin-bottom: 15px;
+}
+
+.page-subtitle {
+  font-size: 1.2em;
+  color: #666;
+  font-style: italic;
+}
+
+.content-wrapper {
+  line-height: 1.8;
+}
+
+.tech-section {
+  margin-bottom: 50px;
+}
+
+.tech-section h2 {
+  font-size: 1.8em;
+  color: #1a3a52;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e8722d;
+}
+
+.tech-section p {
+  font-size: 1.05em;
+  color: #444;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.tech-card {
+  background-color: #f8f9fa;
+  border-left: 4px solid #e8722d;
+  padding: 25px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.tech-card h3 {
+  font-size: 1.3em;
+  color: #1a3a52;
+  margin-bottom: 12px;
+}
+
+.tech-card p {
+  font-size: 0.95em;
+  color: #555;
+  text-align: left;
+}
+
+.callout-section {
+  background-color: #e8f4f8;
+  border-left: 6px solid #1a3a52;
+  padding: 30px;
+  border-radius: 4px;
+  margin-top: 50px;
+}
+
+.callout-section h2 {
+  border-bottom-color: #1a3a52;
+}
+
+.callout-section p {
+  font-size: 1.1em;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 20px;
+  }
+
+  .page-header h1 {
+    font-size: 1.8em;
+  }
+
+  .page-subtitle {
+    font-size: 1em;
+  }
+
+  .tech-section h2 {
+    font-size: 1.4em;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-section p {
+    text-align: left;
+  }
+}.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 50px;
+  border-bottom: 3px solid #1a3a52;
+  padding-bottom: 30px;
+}
+
+.page-header h1 {
+  font-size: 2.5em;
+  color: #1a3a52;
+  margin-bottom: 15px;
+}
+
+.page-subtitle {
+  font-size: 1.2em;
+  color: #666;
+  font-style: italic;
+}
+
+.content-wrapper {
+  line-height: 1.8;
+}
+
+.tech-section {
+  margin-bottom: 50px;
+}
+
+.tech-section h2 {
+  font-size: 1.8em;
+  color: #1a3a52;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e8722d;
+}
+
+.tech-section p {
+  font-size: 1.05em;
+  color: #444;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.tech-card {
+  background-color: #f8f9fa;
+  border-left: 4px solid #e8722d;
+  padding: 25px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.tech-card h3 {
+  font-size: 1.3em;
+  color: #1a3a52;
+  margin-bottom: 12px;
+}
+
+.tech-card p {
+  font-size: 0.95em;
+  color: #555;
+  text-align: left;
+}
+
+.callout-section {
+  background-color: #e8f4f8;
+  border-left: 6px solid #1a3a52;
+  padding: 30px;
+  border-radius: 4px;
+  margin-top: 50px;
+}
+
+.callout-section h2 {
+  border-bottom-color: #1a3a52;
+}
+
+.callout-section p {
+  font-size: 1.1em;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 20px;
+  }
+
+  .page-header h1 {
+    font-size: 1.8em;
+  }
+
+  .page-subtitle {
+    font-size: 1em;
+  }
+
+  .tech-section h2 {
+    font-size: 1.4em;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-section p {
+    text-align: left;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <a href="/wwii-history/" class="site-logo">
+      <h1>WWII History</h1>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('.site-nav');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('active');
+    });
+  </script>
+</header><nav class="site-nav">
+  <ul class="nav-list">
+    <li><a href="/wwii-history/">Home</a></li>
+    <li><a href="/wwii-history/timeline">Timeline</a></li>
+    <li><a href="/wwii-history/causes">Causes</a></li>
+    <li class="nav-submenu">
+      <a href="/wwii-history/theaters">Theaters</a>
+      <ul class="submenu">
+        <li><a href="/wwii-history/theaters/european-theater">European Theater</a></li>
+        <li><a href="/wwii-history/theaters/pacific-theater">Pacific Theater</a></li>
+      </ul>
+    </li>
+    <li><a href="/wwii-history/battles">Battles</a></li>
+    <li><a href="/wwii-history/figures">Key Figures</a></li>
+    <li><a href="/wwii-history/technology">Technology</a></li>
+    <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+    <li><a href="/wwii-history/home-front">Home Front</a></li>
+    <li><a href="/wwii-history/resources">Resources</a></li>
+    <li><a href="/wwii-history/about">About</a></li>
+  </ul>
+</nav><section class="page-container">
+  <div class="page-header">
+    <h1>WWII Technology</h1>
+    <p class="page-subtitle">Military innovations and technological advances that shaped World War II</p>
+  </div>
+
+  <div class="content-wrapper">
+    <section class="tech-section">
+      <h2>Overview</h2>
+      <p>World War II was a conflict defined by rapid technological innovation. From radar systems that changed aerial warfare to tank designs that revolutionized ground combat, military technology played a crucial role in determining the outcome of battles and, ultimately, the war itself. This page explores the major technological advances that shaped the conflict.</p>
+    </section>
+
+    <section class="tech-section">
+      <h2>Aircraft</h2>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>Fighter Aircraft</h3>
+          <p>Fighter planes evolved dramatically during WWII. The Supermarine Spitfire and Messerschmitt Bf 109 dominated European skies, while the Mitsubishi Zero and F6F Hellcat battled in the Pacific. These aircraft featured improved engines, better aerodynamics, and enhanced weaponry.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Bombers</h3>
+          <p>Strategic bombers like the B-17 Flying Fortress and Avro Lancaster could carry substantial bomb loads over long distances. The development of long-range bombers enabled the strategic bombing campaigns that targeted enemy industrial capacity and infrastructure.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Jet Engines</h3>
+          <p>The Me 262, the world's first operational jet-powered fighter aircraft, represented a significant leap in aviation technology. Although introduced late in the war, it demonstrated the potential of jet propulsion in military aviation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tech-section">
+      <h2>Tanks and Armored Vehicles</h2>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>Medium Tanks</h3>
+          <p>Tanks such as the German Panzer IV and Soviet T-34 became the backbone of armored warfare. These vehicles featured improved armor, more powerful guns, and better mobility, engaging in decisive tank battles across multiple theaters.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Heavy Tanks</h3>
+          <p>Late-war heavy tanks like the German Tiger I and Panther tanks offered superior firepower and armor protection. The Soviet IS series countered these threats with their own heavily armored designs.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Tank Tactics</h3>
+          <p>WWII saw the development of combined arms tactics, coordinating tanks with infantry, artillery, and air support. The Blitzkrieg strategy demonstrated the devastating potential of rapidly advancing armored formations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tech-section">
+      <h2>Radar and Detection Systems</h2>
+      <p>Radar technology revolutionized warfare, particularly in air defense. The British developed Chain Home radar systems that provided early warning of incoming German aircraft during the Battle of Britain. Radar allowed defenders to detect and intercept enemy aircraft before they reached their targets, fundamentally changing aerial combat. Both sides continued to develop and improve radar throughout the war.</p>
+    </section>
+
+    <section class="tech-section">
+      <h2>Naval Technology</h2>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>Aircraft Carriers</h3>
+          <p>The aircraft carrier replaced the battleship as the dominant capital ship. Battles like the Coral Sea and Midway were fought entirely by carrier-based aircraft, proving that naval warfare had fundamentally changed.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Submarines</h3>
+          <p>German U-boats conducted devastating campaigns against Allied shipping. Advanced submarines featured improved diesel engines and the schnorkel device, allowing them to recharge batteries while submerged.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Amphibious Operations</h3>
+          <p>Specialized landing craft like the LCVP (Higgins boat) and LCT enabled large-scale amphibious assaults. These vessels were crucial for island-hopping campaigns in the Pacific and the D-Day invasion of Normandy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tech-section">
+      <h2>Weapons and Explosives</h2>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>Anti-Tank Weapons</h3>
+          <p>Infantry anti-tank weapons evolved rapidly, including the German Panzerfaust and Soviet PTRD rifle. These portable weapons gave soldiers the ability to engage tanks at close range.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Artillery</h3>
+          <p>Artillery systems became increasingly sophisticated, with improved range, accuracy, and fire rates. The German 88mm gun became legendary for its versatility in both anti-aircraft and anti-tank roles.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Nuclear Weapons</h3>
+          <p>The Manhattan Project resulted in the development of atomic bombs. The bombings of Hiroshima and Nagasaki in August 1945 introduced nuclear weapons to warfare and hastened the end of the Pacific War.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tech-section">
+      <h2>Communications and Cryptography</h2>
+      <p>Secure communications and code-breaking played vital roles in WWII strategy. The Enigma machine encrypted German military communications, but the Allies' success at Bletchley Park in breaking these codes provided crucial intelligence. Radio communications technology also improved throughout the war, enabling better coordination of military operations.</p>
+    </section>
+
+    <section class="tech-section">
+      <h2>Medical and Logistical Advances</h2>
+      <p>WWII saw significant advances in battlefield medicine, including improved blood transfusion practices, antibiotics like penicillin, and surgical techniques. Logistical innovations in supply chains and transportation enabled armies to sustain operations far from home, with the development of specialized vehicles and supply systems.</p>
+    </section>
+
+    <section class="tech-section callout-section">
+      <h2>The Technological Race</h2>
+      <p>WWII was fundamentally a competition in technological innovation. Both the Axis and Allied powers invested heavily in research and development, leading to rapid advances in every aspect of military technology. The ability to produce and deploy new technologies faster than the enemy often determined success on the battlefield.</p>
+    </section>
+  </div>
+</section><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>WWII History</h3>
+      <p>An authoritative resource for World War II history, education, and research.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/wwii-history/timeline">Timeline</a></li>
+        <li><a href="/wwii-history/battles">Major Battles</a></li>
+        <li><a href="/wwii-history/figures">Key Figures</a></li>
+        <li><a href="/wwii-history/resources">Resources</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="/wwii-history/causes">Causes of WWII</a></li>
+        <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+        <li><a href="/wwii-history/technology">Technology</a></li>
+        <li><a href="/wwii-history/home-front">Home Front</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="/wwii-history/about">About Us</a></li>
+        <li><a href="/wwii-history/contact">Contact</a></li>
+        <li><a href="/wwii-history/privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 WWII History. All rights reserved. Dedicated to historical accuracy and education.</p>
+  </div>
+</footer></body></html>
