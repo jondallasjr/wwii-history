@@ -1,0 +1,894 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>WWII Timeline</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #1a3a52;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header Styles */
+.site-header {
+  background-color: #1a3a52;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.site-logo h1 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.site-logo:hover {
+  opacity: 0.9;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Navigation Styles */
+.site-nav {
+  background-color: #1a3a52;
+  padding: 0 20px;
+}
+
+.nav-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list a {
+  display: block;
+  padding: 12px 15px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-size: 0.95em;
+}
+
+.nav-list a:hover {
+  color: #e8722d;
+  background-color: rgba(232, 114, 45, 0.1);
+}
+
+.nav-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0f2436;
+  flex-direction: column;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-submenu:hover .submenu {
+  display: flex;
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenu li:last-child a {
+  border-bottom: none;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #0f2436;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e8722d;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.3s ease;
+  }
+
+  .site-nav.active {
+    max-height: 500px;
+    padding: 15px 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .submenu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-submenu.active .submenu {
+    display: flex;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* WWII Timeline - Page CSS */
+.timeline-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 3px solid #1a3a52;
+}
+
+.timeline-header h1 {
+  font-size: 2.5em;
+  color: #1a3a52;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #666;
+  font-weight: 500;
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #1a3a52, #e8722d);
+  top: 0;
+}
+
+.timeline-event {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-event:nth-child(odd) .timeline-content {
+  margin-left: 0;
+  margin-right: auto;
+  width: calc(50% - 30px);
+  text-align: right;
+  padding-right: 30px;
+}
+
+.timeline-event:nth-child(even) .timeline-content {
+  margin-left: auto;
+  margin-right: 0;
+  width: calc(50% - 30px);
+  text-align: left;
+  padding-left: 30px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: 4px solid #e8722d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #1a3a52;
+  z-index: 1;
+  box-shadow: 0 0 0 8px #f5f5f5;
+}
+
+.timeline-content {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #e8722d;
+  transition: all 0.3s ease;
+}
+
+.timeline-event:nth-child(even) .timeline-content {
+  border-left: none;
+  border-right: 4px solid #e8722d;
+}
+
+.timeline-content:hover {
+  background-color: #eff6f9;
+  box-shadow: 0 4px 12px rgba(26, 58, 82, 0.1);
+  transform: translateY(-2px);
+}
+
+.timeline-content h3 {
+  font-size: 1.1em;
+  color: #e8722d;
+  margin-bottom: 5px;
+}
+
+.timeline-content h4 {
+  font-size: 1.4em;
+  color: #1a3a52;
+  margin-bottom: 12px;
+}
+
+.timeline-content p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.significance {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #1a3a52;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.timeline-footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 2px solid #1a3a52;
+  color: #666;
+}
+
+.timeline-footer a {
+  color: #1a3a52;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.timeline-footer a:hover {
+  color: #e8722d;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-marker {
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 0.9em;
+  }
+
+  .timeline-event:nth-child(odd) .timeline-content,
+  .timeline-event:nth-child(even) .timeline-content {
+    width: calc(100% - 70px);
+    margin-left: 70px;
+    margin-right: 0;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 4px solid #e8722d;
+    border-right: none;
+  }
+
+  .timeline-header h1 {
+    font-size: 1.8em;
+  }
+
+  .subtitle {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-container {
+    padding: 20px 15px;
+  }
+
+  .timeline-marker {
+    width: 40px;
+    height: 40px;
+    font-size: 0.8em;
+  }
+
+  .timeline-event:nth-child(odd) .timeline-content,
+  .timeline-event:nth-child(even) .timeline-content {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.1em;
+  }
+
+  .timeline-content p {
+    font-size: 0.95em;
+  }
+}.timeline-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 3px solid #1a3a52;
+}
+
+.timeline-header h1 {
+  font-size: 2.5em;
+  color: #1a3a52;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #666;
+  font-weight: 500;
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #1a3a52, #e8722d);
+  top: 0;
+}
+
+.timeline-event {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-event:nth-child(odd) .timeline-content {
+  margin-left: 0;
+  margin-right: auto;
+  width: calc(50% - 30px);
+  text-align: right;
+  padding-right: 30px;
+}
+
+.timeline-event:nth-child(even) .timeline-content {
+  margin-left: auto;
+  margin-right: 0;
+  width: calc(50% - 30px);
+  text-align: left;
+  padding-left: 30px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: 4px solid #e8722d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #1a3a52;
+  z-index: 1;
+  box-shadow: 0 0 0 8px #f5f5f5;
+}
+
+.timeline-content {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #e8722d;
+  transition: all 0.3s ease;
+}
+
+.timeline-event:nth-child(even) .timeline-content {
+  border-left: none;
+  border-right: 4px solid #e8722d;
+}
+
+.timeline-content:hover {
+  background-color: #eff6f9;
+  box-shadow: 0 4px 12px rgba(26, 58, 82, 0.1);
+  transform: translateY(-2px);
+}
+
+.timeline-content h3 {
+  font-size: 1.1em;
+  color: #e8722d;
+  margin-bottom: 5px;
+}
+
+.timeline-content h4 {
+  font-size: 1.4em;
+  color: #1a3a52;
+  margin-bottom: 12px;
+}
+
+.timeline-content p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.significance {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #1a3a52;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.timeline-footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 2px solid #1a3a52;
+  color: #666;
+}
+
+.timeline-footer a {
+  color: #1a3a52;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.timeline-footer a:hover {
+  color: #e8722d;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-marker {
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 0.9em;
+  }
+
+  .timeline-event:nth-child(odd) .timeline-content,
+  .timeline-event:nth-child(even) .timeline-content {
+    width: calc(100% - 70px);
+    margin-left: 70px;
+    margin-right: 0;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 4px solid #e8722d;
+    border-right: none;
+  }
+
+  .timeline-header h1 {
+    font-size: 1.8em;
+  }
+
+  .subtitle {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-container {
+    padding: 20px 15px;
+  }
+
+  .timeline-marker {
+    width: 40px;
+    height: 40px;
+    font-size: 0.8em;
+  }
+
+  .timeline-event:nth-child(odd) .timeline-content,
+  .timeline-event:nth-child(even) .timeline-content {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.1em;
+  }
+
+  .timeline-content p {
+    font-size: 0.95em;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <a href="/wwii-history/" class="site-logo">
+      <h1>WWII History</h1>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('.site-nav');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('active');
+    });
+  </script>
+</header><nav class="site-nav">
+  <ul class="nav-list">
+    <li><a href="/wwii-history/">Home</a></li>
+    <li><a href="/wwii-history/timeline">Timeline</a></li>
+    <li><a href="/wwii-history/causes">Causes</a></li>
+    <li class="nav-submenu">
+      <a href="/wwii-history/theaters">Theaters</a>
+      <ul class="submenu">
+        <li><a href="/wwii-history/theaters/european-theater">European Theater</a></li>
+        <li><a href="/wwii-history/theaters/pacific-theater">Pacific Theater</a></li>
+      </ul>
+    </li>
+    <li><a href="/wwii-history/battles">Battles</a></li>
+    <li><a href="/wwii-history/figures">Key Figures</a></li>
+    <li><a href="/wwii-history/technology">Technology</a></li>
+    <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+    <li><a href="/wwii-history/home-front">Home Front</a></li>
+    <li><a href="/wwii-history/resources">Resources</a></li>
+    <li><a href="/wwii-history/about">About</a></li>
+  </ul>
+</nav><main class="timeline-container">
+  <div class="timeline-header">
+    <h1>WWII Timeline</h1>
+    <p class="subtitle">Major Events 1939-1945</p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-event">
+      <div class="timeline-marker">1939</div>
+      <div class="timeline-content">
+        <h3>September 1, 1939</h3>
+        <h4>Germany Invades Poland</h4>
+        <p>Germany launches Operation Fall Weiß, invading Poland. Britain and France declare war on Germany two days later, officially beginning World War II in Europe.</p>
+        <span class="significance">Historic Significance: Start of WWII in Europe</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1940</div>
+      <div class="timeline-content">
+        <h3>May-June 1940</h3>
+        <h4>Fall of France</h4>
+        <p>Germany defeats France in the Battle of France. The French sign an armistice on June 22, 1940. Britain stands alone against Nazi Germany.</p>
+        <span class="significance">Historic Significance: Shift in European power dynamics</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1940</div>
+      <div class="timeline-content">
+        <h3>July-October 1940</h3>
+        <h4>Battle of Britain</h4>
+        <p>Germany's Luftwaffe attempts to establish air superiority over Britain as a prelude to invasion. The RAF's successful defense becomes a turning point in the war.</p>
+        <span class="significance">Historic Significance: First major defeat of Nazi Germany</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1941</div>
+      <div class="timeline-content">
+        <h3>June 22, 1941</h3>
+        <h4>Operation Barbarossa</h4>
+        <p>Germany invades the Soviet Union, breaking the Nazi-Soviet Non-Aggression Pact. This opens the largest theater of war in human history.</p>
+        <span class="significance">Historic Significance: Soviet Union enters the war; massive scale conflict begins</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1941</div>
+      <div class="timeline-content">
+        <h3>December 7, 1941</h3>
+        <h4>Attack on Pearl Harbor</h4>
+        <p>Japan attacks the U.S. naval base at Pearl Harbor, Hawaii. The United States declares war on Japan the next day, entering WWII.</p>
+        <span class="significance">Historic Significance: United States enters the war</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1942</div>
+      <div class="timeline-content">
+        <h3>August-February 1942-43</h3>
+        <h4>Battle of Stalingrad</h4>
+        <p>One of the bloodiest battles in human history. Soviet forces under General Zhukov defeat the German 6th Army, marking a major turning point on the Eastern Front.</p>
+        <span class="significance">Historic Significance: First major German defeat; Soviet momentum begins</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1942</div>
+      <div class="timeline-content">
+        <h3>June 4-7, 1942</h3>
+        <h4>Battle of Midway</h4>
+        <p>U.S. naval forces defeat the Japanese fleet in the Pacific. This marks the beginning of American naval superiority in the Pacific Theater.</p>
+        <span class="significance">Historic Significance: Turning point in the Pacific War</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1943</div>
+      <div class="timeline-content">
+        <h3>July 10, 1943</h3>
+        <h4>Invasion of Sicily</h4>
+        <p>Operation Husky: Allied forces invade Sicily, establishing a foothold in Europe. This leads to the invasion of mainland Italy.</p>
+        <span class="significance">Historic Significance: Beginning of Allied invasion of Europe</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1944</div>
+      <div class="timeline-content">
+        <h3>June 6, 1944</h3>
+        <h4>D-Day: Normandy Invasion</h4>
+        <p>Operation Overlord: Largest amphibious invasion in history. Over 150,000 Allied troops land on the beaches of Normandy, establishing a western front in Europe.</p>
+        <span class="significance">Historic Significance: Beginning of liberation of Western Europe</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1944</div>
+      <div class="timeline-content">
+        <h3>August-September 1944</h3>
+        <h4>Liberation of Paris</h4>
+        <p>French and American forces liberate Paris from German occupation. General de Gaulle leads the ceremonial march down the Champs-Élysées.</p>
+        <span class="significance">Historic Significance: Symbolic restoration of France</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1945</div>
+      <div class="timeline-content">
+        <h3>January-May 1945</h3>
+        <h4>Soviet Advance to Berlin</h4>
+        <p>Soviet forces advance through Eastern Europe toward Berlin. The Red Army captures Warsaw and pushes toward Germany's capital.</p>
+        <span class="significance">Historic Significance: Soviet dominance in Eastern Europe</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1945</div>
+      <div class="timeline-content">
+        <h3>April 30, 1945</h3>
+        <h4>Hitler's Suicide</h4>
+        <p>Adolf Hitler commits suicide in his bunker as Soviet forces close in. He designates Admiral Karl Dönitz as his successor.</p>
+        <span class="significance">Historic Significance: End of Nazi leadership</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1945</div>
+      <div class="timeline-content">
+        <h3>May 7-8, 1945</h3>
+        <h4>Germany Surrenders</h4>
+        <p>Germany signs the Instrument of Surrender, ending the war in Europe. May 8 is celebrated as Victory in Europe Day (V-E Day).</p>
+        <span class="significance">Historic Significance: End of war in European Theater</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1945</div>
+      <div class="timeline-content">
+        <h3>August 6 & 9, 1945</h3>
+        <h4>Atomic Bombs on Japan</h4>
+        <p>The United States drops atomic bombs on Hiroshima and Nagasaki. Japan surrenders on August 15, 1945.</p>
+        <span class="significance">Historic Significance: End of war in Pacific Theater; introduction of nuclear weapons</span>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-marker">1945</div>
+      <div class="timeline-content">
+        <h3>September 2, 1945</h3>
+        <h4>V-J Day: Official Japanese Surrender</h4>
+        <p>Japan formally signs the Instrument of Surrender aboard the USS Missouri in Tokyo Bay. World War II officially ends.</p>
+        <span class="significance">Historic Significance: Official end of WWII</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-footer">
+    <p>This timeline presents the major events of World War II from 1939 to 1945. For more detailed information, explore our <a href="/wwii-history/battles">Major Battles</a>, <a href="/wwii-history/figures">Key Figures</a>, and <a href="/wwii-history/resources">Resources</a> sections.</p>
+  </div>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>WWII History</h3>
+      <p>An authoritative resource for World War II history, education, and research.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/wwii-history/timeline">Timeline</a></li>
+        <li><a href="/wwii-history/battles">Major Battles</a></li>
+        <li><a href="/wwii-history/figures">Key Figures</a></li>
+        <li><a href="/wwii-history/resources">Resources</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="/wwii-history/causes">Causes of WWII</a></li>
+        <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+        <li><a href="/wwii-history/technology">Technology</a></li>
+        <li><a href="/wwii-history/home-front">Home Front</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="/wwii-history/about">About Us</a></li>
+        <li><a href="/wwii-history/contact">Contact</a></li>
+        <li><a href="/wwii-history/privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 WWII History. All rights reserved. Dedicated to historical accuracy and education.</p>
+  </div>
+</footer></body></html>
