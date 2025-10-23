@@ -6,13 +6,14 @@
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
+  color: #333;
   background-color: #fff;
 }
 
@@ -22,52 +23,58 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #2d5a7b;
+  color: #1a3a52;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
-a:hover {
-  color: #d4af37;
+ul, ol {
+  list-style: none;
 }
 
-/* HEADER STYLES */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header Styles */
 .site-header {
   background-color: #1a3a52;
   color: white;
-  padding: 15px 0;
+  padding: 0;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.logo a {
+.site-logo {
   color: white;
   text-decoration: none;
-  display: flex;
-  align-items: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
-.logo-text {
-  color: #d4af37;
+.site-logo h1 {
+  margin: 0;
+  font-size: 1em;
 }
 
-.mobile-menu-toggle {
+.site-logo:hover {
+  opacity: 0.9;
+}
+
+.nav-toggle {
   display: none;
   flex-direction: column;
   background: none;
@@ -76,7 +83,7 @@ a:hover {
   padding: 5px;
 }
 
-.mobile-menu-toggle span {
+.nav-toggle span {
   width: 25px;
   height: 3px;
   background-color: white;
@@ -85,117 +92,93 @@ a:hover {
   border-radius: 2px;
 }
 
-.mobile-menu-toggle.active span:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.mobile-menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.mobile-menu-toggle.active span:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* NAVIGATION STYLES */
+/* Navigation Styles */
 .site-nav {
-  background-color: #2d5a7b;
-  padding: 0;
-}
-
-.nav-menu {
-  list-style: none;
-  display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  flex-wrap: wrap;
-}
-
-.nav-menu li {
-  position: relative;
-}
-
-.nav-menu a {
-  display: block;
-  padding: 15px 16px;
-  color: white;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  font-size: 0.95rem;
-}
-
-.nav-menu a:hover {
   background-color: #1a3a52;
-  color: #d4af37;
+  padding: 0 20px;
 }
 
-.nav-dropdown {
+.nav-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-list li {
   position: relative;
 }
 
-.dropdown-menu {
-  list-style: none;
+.nav-list a {
+  display: block;
+  padding: 12px 15px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-size: 0.95em;
+}
+
+.nav-list a:hover {
+  color: #e8722d;
+  background-color: rgba(232, 114, 45, 0.1);
+}
+
+.nav-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #1a3a52;
+  background-color: #0f2436;
+  flex-direction: column;
   min-width: 200px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.nav-dropdown.active .dropdown-menu {
-  max-height: 500px;
+.nav-submenu:hover .submenu {
+  display: flex;
 }
 
-.dropdown-menu li {
-  border-bottom: 1px solid #2d5a7b;
+.submenu li a {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.dropdown-menu li:last-child {
+.submenu li:last-child a {
   border-bottom: none;
 }
 
-.dropdown-menu a {
-  padding: 12px 20px;
-  color: white;
-}
-
-.dropdown-menu a:hover {
-  background-color: #0f2235;
-  color: #d4af37;
-}
-
-/* FOOTER STYLES */
+/* Footer Styles */
 .site-footer {
-  background-color: #1a3a52;
-  color: white;
-  margin-top: 80px;
-  padding: 60px 20px 20px;
+  background-color: #0f2436;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 40px 20px 20px;
+  margin-top: 60px;
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
+  gap: 30px;
+  margin-bottom: 30px;
 }
 
 .footer-section h3,
 .footer-section h4 {
-  color: #d4af37;
+  color: white;
   margin-bottom: 15px;
-  font-size: 1.1rem;
+  font-size: 1.1em;
 }
 
 .footer-section p {
   line-height: 1.6;
-  opacity: 0.9;
+  font-size: 0.95em;
 }
 
 .footer-section ul {
@@ -203,77 +186,70 @@ a:hover {
 }
 
 .footer-section ul li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .footer-section a {
-  color: #ccc;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: #d4af37;
+  color: #e8722d;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 1400px;
+  margin: 0 auto;
   padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
-  opacity: 0.8;
-  font-size: 0.9rem;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-/* RESPONSIVE DESIGN */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .mobile-menu-toggle {
+  .nav-toggle {
     display: flex;
   }
 
   .site-nav {
     max-height: 0;
     overflow: hidden;
+    padding: 0 20px;
     transition: max-height 0.3s ease;
   }
 
   .site-nav.active {
     max-height: 500px;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    padding: 0;
-  }
-
-  .nav-menu li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .nav-menu a {
     padding: 15px 20px;
   }
 
-  .dropdown-menu {
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .submenu {
     position: static;
-    max-height: 0;
+    display: none;
     box-shadow: none;
-    background-color: #1a3a52;
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
-  .nav-dropdown.active .dropdown-menu {
-    max-height: 500px;
-  }
-
-  .dropdown-menu a {
-    padding-left: 40px;
+  .nav-submenu.active .submenu {
+    display: flex;
   }
 
   .footer-container {
     grid-template-columns: 1fr;
-    gap: 30px;
   }
 }
-
 /* WWII History - Page CSS */
 .homepage {
   width: 100%;
@@ -282,9 +258,8 @@ a:hover {
 .hero {
   background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
   color: white;
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
-  margin-bottom: 60px;
 }
 
 .hero-content {
@@ -293,191 +268,171 @@ a:hover {
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 3em;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   letter-spacing: -1px;
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.25em;
   font-weight: 300;
-  margin-bottom: 20px;
+  line-height: 1.6;
+  margin-bottom: 40px;
   opacity: 0.95;
 }
 
-.hero-description {
-  font-size: 1.1rem;
-  margin-bottom: 40px;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-.hero-cta {
+.hero-nav {
   display: flex;
   gap: 15px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.btn {
+.cta-button {
   display: inline-block;
-  padding: 12px 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.btn-primary {
-  background-color: #d4af37;
-  color: #1a3a52;
-}
-
-.btn-primary:hover {
-  background-color: #e5c158;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.btn-secondary {
-  background-color: rgba(255, 255, 255, 0.2);
+  padding: 12px 28px;
+  background-color: #e8722d;
   color: white;
-  border: 2px solid white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-.btn-secondary:hover {
+.cta-button:hover {
+  background-color: #d45f1e;
+}
+
+.cta-button.secondary {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.cta-button.secondary:hover {
   background-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
 }
 
 .featured-sections {
-  padding: 40px 20px;
-  background-color: #f8f9fa;
+  padding: 60px 20px;
+  background-color: #f5f5f5;
 }
 
 .section-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 
 .section-card {
   background: white;
   padding: 30px;
   border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  border-top: 4px solid #2d5a7b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .section-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
 }
 
 .section-card h2 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  color: #1a3a52;
+  margin: 0 0 15px 0;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 .section-card h2 a {
   color: #1a3a52;
   text-decoration: none;
-  transition: color 0.3s ease;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
 .section-card h2 a:hover {
-  color: #d4af37;
+  border-bottom-color: #e8722d;
 }
 
 .section-card p {
   color: #555;
   line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.read-more {
-  color: #2d5a7b;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-  display: inline-block;
-}
-
-.read-more:hover {
-  color: #d4af37;
+  margin: 0;
+  font-size: 0.95em;
 }
 
 .about-preview {
   padding: 60px 20px;
   background-color: white;
-  max-width: 900px;
+}
+
+.about-content {
+  max-width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .about-content h2 {
-  font-size: 2rem;
-  color: #1a3a52;
+  font-size: 2em;
+  font-weight: 600;
   margin-bottom: 20px;
+  color: #1a3a52;
 }
 
 .about-content p {
-  font-size: 1.1rem;
-  color: #555;
+  font-size: 1.05em;
   line-height: 1.8;
-  margin-bottom: 30px;
+  color: #555;
+  margin-bottom: 15px;
 }
 
-.btn-outline {
-  background-color: transparent;
-  color: #2d5a7b;
-  border: 2px solid #2d5a7b;
+.about-content .link {
+  color: #e8722d;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.btn-outline:hover {
-  background-color: #2d5a7b;
-  color: white;
+.about-content .link:hover {
+  color: #d45f1e;
 }
 
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2em;
   }
-
+  
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1em;
   }
-
-  .hero-cta {
+  
+  .hero-nav {
     flex-direction: column;
+    gap: 10px;
   }
-
-  .btn {
+  
+  .cta-button {
     width: 100%;
   }
-
+  
   .section-grid {
     grid-template-columns: 1fr;
   }
-}
-.homepage {
+  
+  .about-content h2 {
+    font-size: 1.5em;
+  }
+}.homepage {
   width: 100%;
 }
 
 .hero {
   background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
   color: white;
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
-  margin-bottom: 60px;
 }
 
 .hero-content {
@@ -486,205 +441,194 @@ a:hover {
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 3em;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   letter-spacing: -1px;
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.25em;
   font-weight: 300;
-  margin-bottom: 20px;
+  line-height: 1.6;
+  margin-bottom: 40px;
   opacity: 0.95;
 }
 
-.hero-description {
-  font-size: 1.1rem;
-  margin-bottom: 40px;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-.hero-cta {
+.hero-nav {
   display: flex;
   gap: 15px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.btn {
+.cta-button {
   display: inline-block;
-  padding: 12px 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.btn-primary {
-  background-color: #d4af37;
-  color: #1a3a52;
-}
-
-.btn-primary:hover {
-  background-color: #e5c158;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.btn-secondary {
-  background-color: rgba(255, 255, 255, 0.2);
+  padding: 12px 28px;
+  background-color: #e8722d;
   color: white;
-  border: 2px solid white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-.btn-secondary:hover {
+.cta-button:hover {
+  background-color: #d45f1e;
+}
+
+.cta-button.secondary {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.cta-button.secondary:hover {
   background-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
 }
 
 .featured-sections {
-  padding: 40px 20px;
-  background-color: #f8f9fa;
+  padding: 60px 20px;
+  background-color: #f5f5f5;
 }
 
 .section-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 
 .section-card {
   background: white;
   padding: 30px;
   border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  border-top: 4px solid #2d5a7b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .section-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
 }
 
 .section-card h2 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  color: #1a3a52;
+  margin: 0 0 15px 0;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 .section-card h2 a {
   color: #1a3a52;
   text-decoration: none;
-  transition: color 0.3s ease;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
 .section-card h2 a:hover {
-  color: #d4af37;
+  border-bottom-color: #e8722d;
 }
 
 .section-card p {
   color: #555;
   line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.read-more {
-  color: #2d5a7b;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-  display: inline-block;
-}
-
-.read-more:hover {
-  color: #d4af37;
+  margin: 0;
+  font-size: 0.95em;
 }
 
 .about-preview {
   padding: 60px 20px;
   background-color: white;
-  max-width: 900px;
+}
+
+.about-content {
+  max-width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .about-content h2 {
-  font-size: 2rem;
-  color: #1a3a52;
+  font-size: 2em;
+  font-weight: 600;
   margin-bottom: 20px;
+  color: #1a3a52;
 }
 
 .about-content p {
-  font-size: 1.1rem;
-  color: #555;
+  font-size: 1.05em;
   line-height: 1.8;
-  margin-bottom: 30px;
+  color: #555;
+  margin-bottom: 15px;
 }
 
-.btn-outline {
-  background-color: transparent;
-  color: #2d5a7b;
-  border: 2px solid #2d5a7b;
+.about-content .link {
+  color: #e8722d;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.btn-outline:hover {
-  background-color: #2d5a7b;
-  color: white;
+.about-content .link:hover {
+  color: #d45f1e;
 }
 
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2em;
   }
-
+  
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1em;
   }
-
-  .hero-cta {
+  
+  .hero-nav {
     flex-direction: column;
+    gap: 10px;
   }
-
-  .btn {
+  
+  .cta-button {
     width: 100%;
   }
-
+  
   .section-grid {
     grid-template-columns: 1fr;
   }
-}
-</style></head><body><header class="site-header">
+  
+  .about-content h2 {
+    font-size: 1.5em;
+  }
+}</style></head><body><header class="site-header">
   <div class="header-container">
-    <div class="logo">
-      <a href="/wwii-history/"><span class="logo-text">WWII History</span></a>
-    </div>
-    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+    <a href="/wwii-history/" class="site-logo">
+      <h1>WWII History</h1>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </div>
-</header><nav class="site-nav" id="siteNav">
-  <ul class="nav-menu">
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('.site-nav');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('active');
+    });
+  </script>
+</header><nav class="site-nav">
+  <ul class="nav-list">
     <li><a href="/wwii-history/">Home</a></li>
-    <li><a href="/wwii-history/causes">Causes</a></li>
     <li><a href="/wwii-history/timeline">Timeline</a></li>
-    <li><a href="/wwii-history/battles">Battles</a></li>
-    <li class="nav-dropdown">
-      <a href="#" class="dropdown-toggle">Theaters</a>
-      <ul class="dropdown-menu">
+    <li><a href="/wwii-history/causes">Causes</a></li>
+    <li class="nav-submenu">
+      <a href="/wwii-history/theaters">Theaters</a>
+      <ul class="submenu">
         <li><a href="/wwii-history/theaters/european-theater">European Theater</a></li>
         <li><a href="/wwii-history/theaters/pacific-theater">Pacific Theater</a></li>
       </ul>
     </li>
+    <li><a href="/wwii-history/battles">Battles</a></li>
     <li><a href="/wwii-history/figures">Key Figures</a></li>
     <li><a href="/wwii-history/technology">Technology</a></li>
     <li><a href="/wwii-history/holocaust">Holocaust</a></li>
@@ -692,80 +636,52 @@ a:hover {
     <li><a href="/wwii-history/resources">Resources</a></li>
     <li><a href="/wwii-history/about">About</a></li>
   </ul>
-</nav>
-<script>
-  document.getElementById('mobileMenuToggle').addEventListener('click', function() {
-    document.getElementById('siteNav').classList.toggle('active');
-    this.classList.toggle('active');
-  });
-  
-  document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-    toggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.parentElement.classList.toggle('active');
-    });
-  });
-</script><main class="homepage">
+</nav><main class="homepage">
   <section class="hero">
     <div class="hero-content">
       <h1>World War II History</h1>
-      <p class="hero-subtitle">An Authoritative Resource on the Global Conflict (1939-1945)</p>
-      <p class="hero-description">Explore the causes, major events, key figures, and lasting global impact of World War II through comprehensive historical documentation.</p>
-      <div class="hero-cta">
-        <a href="/wwii-history/timeline" class="btn btn-primary">Explore Timeline</a>
-        <a href="/wwii-history/causes" class="btn btn-secondary">Learn the Causes</a>
-      </div>
+      <p class="hero-subtitle">An authoritative resource covering the causes, major events, key figures, and global impact of World War II (1939-1945)</p>
+      <nav class="hero-nav">
+        <a href="/wwii-history/timeline" class="cta-button">Timeline</a>
+        <a href="/wwii-history/causes" class="cta-button secondary">Causes</a>
+        <a href="/wwii-history/battles" class="cta-button secondary">Major Battles</a>
+      </nav>
     </div>
   </section>
 
   <section class="featured-sections">
     <div class="section-grid">
       <article class="section-card">
-        <h2><a href="/wwii-history/causes">Causes of WWII</a></h2>
-        <p>Understand the political, economic, and social factors that led to the outbreak of World War II in Europe and Asia.</p>
-        <a href="/wwii-history/causes" class="read-more">Learn More →</a>
+        <h2><a href="/wwii-history/timeline">Timeline</a></h2>
+        <p>Explore key dates and events from 1939 to 1945, chronicling the progression of the war across all theaters.</p>
       </article>
-
       <article class="section-card">
-        <h2><a href="/wwii-history/timeline">Timeline of Events</a></h2>
-        <p>Follow the major events and turning points of the war from 1939 through 1945 in chronological order.</p>
-        <a href="/wwii-history/timeline" class="read-more">Explore Timeline →</a>
+        <h2><a href="/wwii-history/causes">Causes</a></h2>
+        <p>Understand the political, economic, and social factors that led to the outbreak of World War II.</p>
       </article>
-
+      <article class="section-card">
+        <h2><a href="/wwii-history/theaters">Theaters of War</a></h2>
+        <p>Learn about the European and Pacific theaters, including major campaigns and strategic operations.</p>
+      </article>
       <article class="section-card">
         <h2><a href="/wwii-history/battles">Major Battles</a></h2>
-        <p>Discover detailed accounts of pivotal battles including D-Day, Stalingrad, Midway, and more.</p>
-        <a href="/wwii-history/battles" class="read-more">View Battles →</a>
+        <p>Detailed accounts of pivotal battles that shaped the outcome of the war.</p>
       </article>
-
       <article class="section-card">
         <h2><a href="/wwii-history/figures">Key Figures</a></h2>
-        <p>Meet the leaders, generals, and influential personalities who shaped the course of World War II.</p>
-        <a href="/wwii-history/figures" class="read-more">Meet the Figures →</a>
+        <p>Profiles of military leaders, political figures, and other influential personalities of the era.</p>
       </article>
-
-      <article class="section-card">
-        <h2><a href="/wwii-history/theaters">War Theaters</a></h2>
-        <p>Examine the European and Pacific theaters, understanding the distinct strategies and campaigns in each region.</p>
-        <a href="/wwii-history/theaters" class="read-more">Explore Theaters →</a>
-      </article>
-
       <article class="section-card">
         <h2><a href="/wwii-history/holocaust">The Holocaust</a></h2>
-        <p>Understand the systematic persecution and genocide perpetrated by Nazi Germany during the war.</p>
-        <a href="/wwii-history/holocaust" class="read-more">Learn More →</a>
+        <p>Documentation and education about the systematic genocide perpetrated during the war.</p>
       </article>
-
       <article class="section-card">
-        <h2><a href="/wwii-history/home-front">The Home Front</a></h2>
-        <p>Discover how civilians experienced the war through rationing, bombing, propaganda, and societal changes.</p>
-        <a href="/wwii-history/home-front" class="read-more">Read About Home Front →</a>
+        <h2><a href="/wwii-history/technology">Technology & Weapons</a></h2>
+        <p>Explore the military innovations and technological advances that defined WWII warfare.</p>
       </article>
-
       <article class="section-card">
-        <h2><a href="/wwii-history/technology">War Technology</a></h2>
-        <p>Explore the weapons, vehicles, and technological innovations that defined modern warfare.</p>
-        <a href="/wwii-history/technology" class="read-more">Discover Technology →</a>
+        <h2><a href="/wwii-history/home-front">Home Front</a></h2>
+        <p>Examine civilian life, rationing, propaganda, and social changes during the war years.</p>
       </article>
     </div>
   </section>
@@ -773,21 +689,21 @@ a:hover {
   <section class="about-preview">
     <div class="about-content">
       <h2>About This Resource</h2>
-      <p>This comprehensive WWII history site provides authoritative, well-researched information on all aspects of the Second World War. Whether you're a student, educator, history enthusiast, or researcher, you'll find detailed articles, timelines, biographical information, and analysis of the events that shaped the modern world.</p>
-      <a href="/wwii-history/about" class="btn btn-outline">Read More About Us</a>
+      <p>This comprehensive archive provides detailed, evidence-based information about World War II, one of the most significant events in human history. Our mission is to educate and preserve the historical record for researchers, students, and history enthusiasts worldwide.</p>
+      <p><a href="/wwii-history/about" class="link">Learn more about our sources and approach →</a></p>
     </div>
   </section>
 </main><footer class="site-footer">
   <div class="footer-container">
     <div class="footer-section">
       <h3>WWII History</h3>
-      <p>An authoritative resource for World War II history covering causes, major events, key figures, and global impact from 1939-1945.</p>
+      <p>An authoritative resource for World War II history, education, and research.</p>
     </div>
     <div class="footer-section">
       <h4>Quick Links</h4>
       <ul>
         <li><a href="/wwii-history/timeline">Timeline</a></li>
-        <li><a href="/wwii-history/battles">Battles</a></li>
+        <li><a href="/wwii-history/battles">Major Battles</a></li>
         <li><a href="/wwii-history/figures">Key Figures</a></li>
         <li><a href="/wwii-history/resources">Resources</a></li>
       </ul>
@@ -795,21 +711,22 @@ a:hover {
     <div class="footer-section">
       <h4>Topics</h4>
       <ul>
-        <li><a href="/wwii-history/causes">Causes</a></li>
+        <li><a href="/wwii-history/causes">Causes of WWII</a></li>
         <li><a href="/wwii-history/holocaust">Holocaust</a></li>
         <li><a href="/wwii-history/technology">Technology</a></li>
         <li><a href="/wwii-history/home-front">Home Front</a></li>
       </ul>
     </div>
     <div class="footer-section">
-      <h4>Learn More</h4>
+      <h4>Information</h4>
       <ul>
-        <li><a href="/wwii-history/about">About This Site</a></li>
-        <li><a href="/wwii-history/theaters">War Theaters</a></li>
+        <li><a href="/wwii-history/about">About Us</a></li>
+        <li><a href="/wwii-history/contact">Contact</a></li>
+        <li><a href="/wwii-history/privacy">Privacy Policy</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2025 WWII History. All rights reserved. Historical accuracy and education mission.</p>
+    <p>&copy; 2025 WWII History. All rights reserved. Dedicated to historical accuracy and education.</p>
   </div>
 </footer></body></html>
