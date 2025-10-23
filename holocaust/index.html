@@ -1,0 +1,858 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>The Holocaust</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #1a3a52;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header Styles */
+.site-header {
+  background-color: #1a3a52;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.site-logo h1 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.site-logo:hover {
+  opacity: 0.9;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Navigation Styles */
+.site-nav {
+  background-color: #1a3a52;
+  padding: 0 20px;
+}
+
+.nav-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list a {
+  display: block;
+  padding: 12px 15px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-size: 0.95em;
+}
+
+.nav-list a:hover {
+  color: #e8722d;
+  background-color: rgba(232, 114, 45, 0.1);
+}
+
+.nav-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0f2436;
+  flex-direction: column;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-submenu:hover .submenu {
+  display: flex;
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenu li:last-child a {
+  border-bottom: none;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #0f2436;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e8722d;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.3s ease;
+  }
+
+  .site-nav.active {
+    max-height: 500px;
+    padding: 15px 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .submenu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-submenu.active .submenu {
+    display: flex;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* The Holocaust - Page CSS */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 200px);
+}
+
+.page-hero {
+  background: linear-gradient(135deg, #1a3a52 0%, #0f2436 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+.page-content {
+  flex-grow: 1;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+}
+
+.main-article {
+  grid-column: 1;
+}
+
+.main-article h2 {
+  font-size: 1.8em;
+  color: #1a3a52;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #e8722d;
+  padding-bottom: 10px;
+}
+
+.main-article h2:first-child {
+  margin-top: 0;
+}
+
+.main-article p {
+  font-size: 1em;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.article-list {
+  list-style: none;
+  margin: 20px 0 20px 0;
+  padding-left: 0;
+}
+
+.article-list li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  color: #333;
+  line-height: 1.7;
+}
+
+.article-list li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #e8722d;
+  font-weight: bold;
+}
+
+.sidebar {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.sidebar-box {
+  background-color: #f5f5f5;
+  border-left: 4px solid #e8722d;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.sidebar-box h3 {
+  color: #1a3a52;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.sidebar-box p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.sidebar-box p:last-child {
+  margin-bottom: 0;
+}
+
+.stats-list {
+  list-style: none;
+  padding: 0;
+}
+
+.stats-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95em;
+  color: #333;
+}
+
+.stats-list li:last-child {
+  border-bottom: none;
+}
+
+.stats-list strong {
+  color: #e8722d;
+  font-weight: 700;
+}
+
+.resource-links {
+  list-style: none;
+  padding: 0;
+}
+
+.resource-links li {
+  margin-bottom: 10px;
+}
+
+.resource-links a {
+  color: #1a3a52;
+  text-decoration: none;
+  font-size: 0.95em;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.resource-links a:hover {
+  color: #e8722d;
+  border-bottom-color: #e8722d;
+}
+
+@media (max-width: 968px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .sidebar {
+    grid-column: 1;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    display: grid;
+  }
+
+  .sidebar-box {
+    grid-column: auto;
+  }
+
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .main-article h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 40px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6em;
+  }
+
+  .hero-subtitle {
+    font-size: 1em;
+  }
+
+  .page-content {
+    padding: 30px 15px;
+  }
+
+  .content-wrapper {
+    gap: 20px;
+  }
+
+  .main-article h2 {
+    font-size: 1.3em;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 200px);
+}
+
+.page-hero {
+  background: linear-gradient(135deg, #1a3a52 0%, #0f2436 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+.page-content {
+  flex-grow: 1;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+}
+
+.main-article {
+  grid-column: 1;
+}
+
+.main-article h2 {
+  font-size: 1.8em;
+  color: #1a3a52;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #e8722d;
+  padding-bottom: 10px;
+}
+
+.main-article h2:first-child {
+  margin-top: 0;
+}
+
+.main-article p {
+  font-size: 1em;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.article-list {
+  list-style: none;
+  margin: 20px 0 20px 0;
+  padding-left: 0;
+}
+
+.article-list li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  color: #333;
+  line-height: 1.7;
+}
+
+.article-list li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #e8722d;
+  font-weight: bold;
+}
+
+.sidebar {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.sidebar-box {
+  background-color: #f5f5f5;
+  border-left: 4px solid #e8722d;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.sidebar-box h3 {
+  color: #1a3a52;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.sidebar-box p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.sidebar-box p:last-child {
+  margin-bottom: 0;
+}
+
+.stats-list {
+  list-style: none;
+  padding: 0;
+}
+
+.stats-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95em;
+  color: #333;
+}
+
+.stats-list li:last-child {
+  border-bottom: none;
+}
+
+.stats-list strong {
+  color: #e8722d;
+  font-weight: 700;
+}
+
+.resource-links {
+  list-style: none;
+  padding: 0;
+}
+
+.resource-links li {
+  margin-bottom: 10px;
+}
+
+.resource-links a {
+  color: #1a3a52;
+  text-decoration: none;
+  font-size: 0.95em;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.resource-links a:hover {
+  color: #e8722d;
+  border-bottom-color: #e8722d;
+}
+
+@media (max-width: 968px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .sidebar {
+    grid-column: 1;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    display: grid;
+  }
+
+  .sidebar-box {
+    grid-column: auto;
+  }
+
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .main-article h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 40px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6em;
+  }
+
+  .hero-subtitle {
+    font-size: 1em;
+  }
+
+  .page-content {
+    padding: 30px 15px;
+  }
+
+  .content-wrapper {
+    gap: 20px;
+  }
+
+  .main-article h2 {
+    font-size: 1.3em;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+</style></head><body><header class="site-header">
+  <div class="header-container">
+    <a href="/wwii-history/" class="site-logo">
+      <h1>WWII History</h1>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('.site-nav');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('active');
+    });
+  </script>
+</header><nav class="site-nav">
+  <ul class="nav-list">
+    <li><a href="/wwii-history/">Home</a></li>
+    <li><a href="/wwii-history/timeline">Timeline</a></li>
+    <li><a href="/wwii-history/causes">Causes</a></li>
+    <li class="nav-submenu">
+      <a href="/wwii-history/theaters">Theaters</a>
+      <ul class="submenu">
+        <li><a href="/wwii-history/theaters/european-theater">European Theater</a></li>
+        <li><a href="/wwii-history/theaters/pacific-theater">Pacific Theater</a></li>
+      </ul>
+    </li>
+    <li><a href="/wwii-history/battles">Battles</a></li>
+    <li><a href="/wwii-history/figures">Key Figures</a></li>
+    <li><a href="/wwii-history/technology">Technology</a></li>
+    <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+    <li><a href="/wwii-history/home-front">Home Front</a></li>
+    <li><a href="/wwii-history/resources">Resources</a></li>
+    <li><a href="/wwii-history/about">About</a></li>
+  </ul>
+</nav><main class="page-container">
+  <section class="page-hero">
+    <div class="hero-content">
+      <h1>The Holocaust</h1>
+      <p class="hero-subtitle">Historical documentation of Nazi genocide including camps, systematic persecution, survivor testimonies, and lessons for humanity.</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="content-wrapper">
+      <article class="main-article">
+        <h2>Overview</h2>
+        <p>The Holocaust was the systematic, state-sponsored persecution and murder of six million Jews by the Nazi regime and its collaborators between 1933 and 1945. It remains one of history's darkest chapters and a stark reminder of the dangers of hatred, prejudice, and unchecked authoritarianism.</p>
+        <p>Beyond the Jewish victims, the Nazi regime also targeted and murdered millions of others, including Roma, disabled individuals, political prisoners, Soviet POWs, and LGBTQ+ people.</p>
+
+        <h2>Systematic Persecution</h2>
+        <p>The persecution of Jews in Nazi Germany occurred in stages:</p>
+        <ul class="article-list">
+          <li><strong>1933-1935:</strong> Boycotts of Jewish businesses, dismissal from civil service, and the Nuremberg Laws stripping Jews of citizenship and rights</li>
+          <li><strong>1936-1939:</strong> Increased restrictions on Jewish life, property confiscation, and forced emigration attempts</li>
+          <li><strong>1939-1941:</strong> Ghettoization in occupied Poland and other territories</li>
+          <li><strong>1941-1945:</strong> The "Final Solution" - the systematic extermination of European Jewry</li>
+        </ul>
+
+        <h2>Concentration and Extermination Camps</h2>
+        <p>The Nazis established a network of camps for imprisonment, forced labor, and mass murder:</p>
+        <ul class="article-list">
+          <li><strong>Auschwitz-Birkenau:</strong> The largest killing center, where over 1.1 million people were murdered</li>
+          <li><strong>Treblinka:</strong> An extermination camp in Poland where approximately 870,000 Jews were killed</li>
+          <li><strong>Sobibor:</strong> An extermination camp where around 250,000 people were murdered</li>
+          <li><strong>Belzec:</strong> An extermination camp where approximately 434,000 people were killed</li>
+          <li><strong>Chelmno:</strong> The first extermination camp, where around 320,000 people were murdered</li>
+          <li><strong>Majdanek:</strong> A camp serving as both concentration and extermination facility</li>
+        </ul>
+
+        <h2>Methods of Murder</h2>
+        <p>The Nazis employed industrial-scale killing methods:</p>
+        <ul class="article-list">
+          <li>Gas chambers disguised as showers using Zyklon B poison gas</li>
+          <li>Mass shootings by mobile killing squads (Einsatzgruppen)</li>
+          <li>Starvation and disease in ghettos and camps</li>
+          <li>Medical experimentation on prisoners</li>
+          <li>Forced labor until death</li>
+        </ul>
+
+        <h2>Survivor Testimonies</h2>
+        <p>The voices of Holocaust survivors provide irreplaceable historical evidence and personal perspectives on these atrocities. Survivors such as Elie Wiesel, Anne Frank, Viktor Frankl, and thousands of others documented their experiences, ensuring the world would never forget. These testimonies reveal not only the horrors of the camps but also the resilience of the human spirit and the importance of bearing witness.</p>
+        <p>Survivor accounts detail the daily struggles for survival, acts of resistance, moments of humanity in inhumane conditions, and the lasting psychological impacts of their experiences.</p>
+
+        <h2>Liberation and Aftermath</h2>
+        <p>As Allied forces advanced, they liberated the concentration camps beginning in 1944. The discoveries of skeletal survivors and mass graves shocked the world and provided undeniable evidence of Nazi atrocities. Following the war, the Nuremberg Trials held Nazi leaders accountable for crimes against humanity.</p>
+
+        <h2>Lessons for Humanity</h2>
+        <p>The Holocaust stands as a profound warning about:</p>
+        <ul class="article-list">
+          <li>The dangers of unchecked hatred and scapegoating</li>
+          <li>The importance of defending human rights and dignity</li>
+          <li>The responsibility of individuals and nations to resist authoritarianism</li>
+          <li>The critical need for education about history to prevent future atrocities</li>
+          <li>The power of remembrance and bearing witness to ensure "Never Again"</li>
+        </ul>
+        <p>Holocaust education and remembrance remain essential to building a more compassionate and just world.</p>
+      </article>
+
+      <aside class="sidebar">
+        <div class="sidebar-box">
+          <h3>Key Statistics</h3>
+          <ul class="stats-list">
+            <li><strong>6 million</strong> Jews murdered</li>
+            <li><strong>11 million</strong> total victims</li>
+            <li><strong>42,500+</strong> camps and ghettos</li>
+            <li><strong>1933-1945</strong> Duration</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-box">
+          <h3>Remember</h3>
+          <p>"In the end, we will remember not the words of our enemies, but the silence of our friends." - Martin Luther King Jr.</p>
+          <p>Remembrance of the Holocaust is a moral obligation to honor the victims and survivors, and to commit ourselves to preventing such atrocities.</p>
+        </div>
+
+        <div class="sidebar-box">
+          <h3>Resources</h3>
+          <ul class="resource-links">
+            <li><a href="#">United States Holocaust Memorial Museum</a></li>
+            <li><a href="#">Yad Vashem</a></li>
+            <li><a href="#">International Holocaust Remembrance Alliance</a></li>
+            <li><a href="#">Survivor Stories Archive</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>WWII History</h3>
+      <p>An authoritative resource for World War II history, education, and research.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/wwii-history/timeline">Timeline</a></li>
+        <li><a href="/wwii-history/battles">Major Battles</a></li>
+        <li><a href="/wwii-history/figures">Key Figures</a></li>
+        <li><a href="/wwii-history/resources">Resources</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="/wwii-history/causes">Causes of WWII</a></li>
+        <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+        <li><a href="/wwii-history/technology">Technology</a></li>
+        <li><a href="/wwii-history/home-front">Home Front</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="/wwii-history/about">About Us</a></li>
+        <li><a href="/wwii-history/contact">Contact</a></li>
+        <li><a href="/wwii-history/privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 WWII History. All rights reserved. Dedicated to historical accuracy and education.</p>
+  </div>
+</footer></body></html>
