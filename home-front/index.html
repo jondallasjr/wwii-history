@@ -1,0 +1,781 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Home Front</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #1a3a52;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header Styles */
+.site-header {
+  background-color: #1a3a52;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.site-logo h1 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.site-logo:hover {
+  opacity: 0.9;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Navigation Styles */
+.site-nav {
+  background-color: #1a3a52;
+  padding: 0 20px;
+}
+
+.nav-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list a {
+  display: block;
+  padding: 12px 15px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-size: 0.95em;
+}
+
+.nav-list a:hover {
+  color: #e8722d;
+  background-color: rgba(232, 114, 45, 0.1);
+}
+
+.nav-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0f2436;
+  flex-direction: column;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-submenu:hover .submenu {
+  display: flex;
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenu li:last-child a {
+  border-bottom: none;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #0f2436;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e8722d;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.3s ease;
+  }
+
+  .site-nav.active {
+    max-height: 500px;
+    padding: 15px 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .submenu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-submenu.active .submenu {
+    display: flex;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* Home Front - Page CSS */
+.page-container {
+  min-height: 100vh;
+}
+
+.page-hero {
+  background: linear-gradient(135deg, #1a3a52 0%, #0f2436 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-hero h1 {
+  font-size: 3em;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.3em;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+}
+
+.page-content {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.main-article {
+  line-height: 1.8;
+  color: #333;
+}
+
+.main-article h2 {
+  font-size: 1.8em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #1a3a52;
+  border-bottom: 3px solid #e8722d;
+  padding-bottom: 10px;
+}
+
+.main-article h2:first-of-type {
+  margin-top: 0;
+}
+
+.main-article p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.feature-list {
+  list-style: none;
+  margin: 20px 0 30px 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-left: 4px solid #e8722d;
+}
+
+.feature-list li {
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.feature-list li:before {
+  content: "▪";
+  position: absolute;
+  left: 0;
+  color: #e8722d;
+  font-weight: bold;
+}
+
+.feature-list li:last-child {
+  margin-bottom: 0;
+}
+
+.related-links {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+}
+
+.related-links h2 {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  color: #1a3a52;
+  text-align: center;
+}
+
+.related-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.related-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #1a3a52;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.related-link:hover {
+  background-color: #e8722d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .page-hero h1 {
+    font-size: 2em;
+  }
+
+  .hero-subtitle {
+    font-size: 1em;
+  }
+
+  .main-article h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+  }
+
+  .page-content {
+    padding: 40px 20px;
+  }
+
+  .feature-list {
+    padding: 15px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .related-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .related-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: 40px 15px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.5em;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9em;
+  }
+
+  .main-article h2 {
+    font-size: 1.3em;
+    margin-top: 25px;
+  }
+
+  .main-article p {
+    text-align: left;
+  }
+}.page-container {
+  min-height: 100vh;
+}
+
+.page-hero {
+  background: linear-gradient(135deg, #1a3a52 0%, #0f2436 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-hero h1 {
+  font-size: 3em;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.3em;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+}
+
+.page-content {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.main-article {
+  line-height: 1.8;
+  color: #333;
+}
+
+.main-article h2 {
+  font-size: 1.8em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #1a3a52;
+  border-bottom: 3px solid #e8722d;
+  padding-bottom: 10px;
+}
+
+.main-article h2:first-of-type {
+  margin-top: 0;
+}
+
+.main-article p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.feature-list {
+  list-style: none;
+  margin: 20px 0 30px 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-left: 4px solid #e8722d;
+}
+
+.feature-list li {
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.feature-list li:before {
+  content: "▪";
+  position: absolute;
+  left: 0;
+  color: #e8722d;
+  font-weight: bold;
+}
+
+.feature-list li:last-child {
+  margin-bottom: 0;
+}
+
+.related-links {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+}
+
+.related-links h2 {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  color: #1a3a52;
+  text-align: center;
+}
+
+.related-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.related-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #1a3a52;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.related-link:hover {
+  background-color: #e8722d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .page-hero h1 {
+    font-size: 2em;
+  }
+
+  .hero-subtitle {
+    font-size: 1em;
+  }
+
+  .main-article h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+  }
+
+  .page-content {
+    padding: 40px 20px;
+  }
+
+  .feature-list {
+    padding: 15px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .related-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .related-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: 40px 15px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.5em;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9em;
+  }
+
+  .main-article h2 {
+    font-size: 1.3em;
+    margin-top: 25px;
+  }
+
+  .main-article p {
+    text-align: left;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <a href="/wwii-history/" class="site-logo">
+      <h1>WWII History</h1>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('.site-nav');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('active');
+    });
+  </script>
+</header><nav class="site-nav">
+  <ul class="nav-list">
+    <li><a href="/wwii-history/">Home</a></li>
+    <li><a href="/wwii-history/timeline">Timeline</a></li>
+    <li><a href="/wwii-history/causes">Causes</a></li>
+    <li class="nav-submenu">
+      <a href="/wwii-history/theaters">Theaters</a>
+      <ul class="submenu">
+        <li><a href="/wwii-history/theaters/european-theater">European Theater</a></li>
+        <li><a href="/wwii-history/theaters/pacific-theater">Pacific Theater</a></li>
+      </ul>
+    </li>
+    <li><a href="/wwii-history/battles">Battles</a></li>
+    <li><a href="/wwii-history/figures">Key Figures</a></li>
+    <li><a href="/wwii-history/technology">Technology</a></li>
+    <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+    <li><a href="/wwii-history/home-front">Home Front</a></li>
+    <li><a href="/wwii-history/resources">Resources</a></li>
+    <li><a href="/wwii-history/about">About</a></li>
+  </ul>
+</nav><main class="page-container">
+  <section class="page-hero">
+    <div class="hero-content">
+      <h1>Home Front</h1>
+      <p class="hero-subtitle">The Experience of Civilians During World War II</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="content-wrapper">
+      <article class="main-article">
+        <h2>Understanding the Home Front</h2>
+        <p>World War II fundamentally changed the lives of civilians across all participating nations. The "Home Front" refers to the civilian experience during the war, encompassing everything from daily hardships to the mobilization of entire societies in support of the war effort.</p>
+
+        <h2>Rationing and Food Shortages</h2>
+        <p>Governments implemented strict rationing systems to ensure adequate supplies for military forces. Citizens received ration books that limited purchases of food, fuel, and clothing. Families learned to stretch resources and make do with substitutes, creating new recipes and conservation methods that became part of wartime culture.</p>
+        <ul class="feature-list">
+          <li>Ration books and allocation systems</li>
+          <li>Victory gardens for food production</li>
+          <li>Substitute ingredients and wartime recipes</li>
+          <li>Black market economies</li>
+        </ul>
+
+        <h2>Air Raids and Civilian Defense</h2>
+        <p>Cities became targets for bombing campaigns. Civilians experienced the terror of air raids, taking shelter in basements, bunkers, and purpose-built air raid shelters. Air raid sirens became a familiar sound, and entire communities participated in blackout procedures and civil defense preparations.</p>
+        <ul class="feature-list">
+          <li>Air raid shelters and bunkers</li>
+          <li>Blackout procedures and light discipline</li>
+          <li>Civil defense organizations</li>
+          <li>Evacuation and relocation programs</li>
+        </ul>
+
+        <h2>Propaganda and Public Morale</h2>
+        <p>Governments used propaganda extensively to maintain public morale and support for the war effort. Posters, radio broadcasts, films, and newspapers shaped public opinion and encouraged citizens to contribute to the cause. Propaganda portrayed enemies as threats and celebrated the righteousness of the national war effort.</p>
+        <ul class="feature-list">
+          <li>Government propaganda campaigns</li>
+          <li>Media and censorship controls</li>
+          <li>Morale-building initiatives</li>
+          <li>Information control and misinformation</li>
+        </ul>
+
+        <h2>Women's Roles and Contributions</h2>
+        <p>World War II dramatically expanded opportunities for women in the workforce. With men serving in the military, women entered factories, farms, and offices in unprecedented numbers. Organizations like the British Women's Land Army and American Rosie the Riveter symbolized women's vital contributions to the war effort.</p>
+        <ul class="feature-list">
+          <li>Factory work and manufacturing</li>
+          <li>Military auxiliary services</li>
+          <li>Agricultural labor</li>
+          <li>Nursing and medical services</li>
+        </ul>
+
+        <h2>Social Impact and Family Life</h2>
+        <p>The war disrupted family structures and social norms. Children were sometimes evacuated from cities to rural areas for safety. Military service separated families for years. Civilian casualties, trauma, and loss became everyday experiences. However, wartime also created strong community bonds and a shared sense of purpose.</p>
+        <ul class="feature-list">
+          <li>Family separation and evacuation</li>
+          <li>Child welfare and education</li>
+          <li>Community solidarity and cooperation</li>
+          <li>Psychological and emotional impact</li>
+        </ul>
+
+        <h2>Economic Mobilization</h2>
+        <p>National economies were completely restructured for war production. Factories converted from civilian to military manufacturing. Workers faced long hours and demanding conditions. Price controls, wage freezes, and resource allocation were implemented across economies.</p>
+        <ul class="feature-list">
+          <li>War production and manufacturing</li>
+          <li>Labor regulations and working conditions</li>
+          <li>Economic controls and rationing</li>
+          <li>Trade and supply chains</li>
+        </ul>
+
+        <h2>Resistance and Civilian Movements</h2>
+        <p>In occupied territories, civilians engaged in resistance movements, from passive non-cooperation to active sabotage. Underground networks provided aid to persecuted populations and maintained national identities under foreign rule. These movements demonstrated civilian courage and determination against oppression.</p>
+        <ul class="feature-list">
+          <li>Underground resistance networks</li>
+          <li>Sabotage and civil disobedience</li>
+          <li>Protection of persecuted populations</li>
+          <li>Maintenance of cultural identity</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="related-links">
+    <div class="content-wrapper">
+      <h2>Related Topics</h2>
+      <nav class="related-nav">
+        <a href="/wwii-history/causes" class="related-link">Causes of WWII</a>
+        <a href="/wwii-history/technology" class="related-link">Military Technology</a>
+        <a href="/wwii-history/holocaust" class="related-link">The Holocaust</a>
+        <a href="/wwii-history/timeline" class="related-link">WWII Timeline</a>
+        <a href="/wwii-history/resources" class="related-link">Resources</a>
+      </nav>
+    </div>
+  </section>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>WWII History</h3>
+      <p>An authoritative resource for World War II history, education, and research.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/wwii-history/timeline">Timeline</a></li>
+        <li><a href="/wwii-history/battles">Major Battles</a></li>
+        <li><a href="/wwii-history/figures">Key Figures</a></li>
+        <li><a href="/wwii-history/resources">Resources</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="/wwii-history/causes">Causes of WWII</a></li>
+        <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+        <li><a href="/wwii-history/technology">Technology</a></li>
+        <li><a href="/wwii-history/home-front">Home Front</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="/wwii-history/about">About Us</a></li>
+        <li><a href="/wwii-history/contact">Contact</a></li>
+        <li><a href="/wwii-history/privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 WWII History. All rights reserved. Dedicated to historical accuracy and education.</p>
+  </div>
+</footer></body></html>
