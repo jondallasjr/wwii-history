@@ -1,0 +1,823 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Educational Resources</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #1a3a52;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header Styles */
+.site-header {
+  background-color: #1a3a52;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.site-logo h1 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.site-logo:hover {
+  opacity: 0.9;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Navigation Styles */
+.site-nav {
+  background-color: #1a3a52;
+  padding: 0 20px;
+}
+
+.nav-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list a {
+  display: block;
+  padding: 12px 15px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-size: 0.95em;
+}
+
+.nav-list a:hover {
+  color: #e8722d;
+  background-color: rgba(232, 114, 45, 0.1);
+}
+
+.nav-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0f2436;
+  flex-direction: column;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-submenu:hover .submenu {
+  display: flex;
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenu li:last-child a {
+  border-bottom: none;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #0f2436;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e8722d;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.3s ease;
+  }
+
+  .site-nav.active {
+    max-height: 500px;
+    padding: 15px 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .submenu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-submenu.active .submenu {
+    display: flex;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* Educational Resources - Page CSS */
+.resources-main {
+  min-height: calc(100vh - 200px);
+}
+
+.resources-hero {
+  background: linear-gradient(135deg, #1a3a52 0%, #0f2436 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.resources-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.resource-category {
+  margin-bottom: 70px;
+}
+
+.category-header {
+  margin-bottom: 40px;
+}
+
+.category-header h2 {
+  font-size: 2em;
+  color: #1a3a52;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #e8722d;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.category-description {
+  font-size: 1.05em;
+  color: #666;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+.resource-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  border-color: #e8722d;
+}
+
+.card-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.resource-card h3 {
+  font-size: 1.3em;
+  color: #1a3a52;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.resource-type,
+.resource-author,
+.resource-location {
+  font-size: 0.9em;
+  color: #e8722d;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.resource-card p:not(.resource-type):not(.resource-author):not(.resource-location) {
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.resource-link {
+  color: #1a3a52;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: auto;
+}
+
+.resource-link:hover {
+  color: #e8722d;
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .resources-hero {
+    padding: 40px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .category-header h2 {
+    font-size: 1.6em;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .resource-category {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.5em;
+  }
+
+  .category-header h2 {
+    font-size: 1.4em;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+}.resources-main {
+  min-height: calc(100vh - 200px);
+}
+
+.resources-hero {
+  background: linear-gradient(135deg, #1a3a52 0%, #0f2436 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.resources-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.resource-category {
+  margin-bottom: 70px;
+}
+
+.category-header {
+  margin-bottom: 40px;
+}
+
+.category-header h2 {
+  font-size: 2em;
+  color: #1a3a52;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #e8722d;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.category-description {
+  font-size: 1.05em;
+  color: #666;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+.resource-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  border-color: #e8722d;
+}
+
+.card-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.resource-card h3 {
+  font-size: 1.3em;
+  color: #1a3a52;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.resource-type,
+.resource-author,
+.resource-location {
+  font-size: 0.9em;
+  color: #e8722d;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.resource-card p:not(.resource-type):not(.resource-author):not(.resource-location) {
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.resource-link {
+  color: #1a3a52;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: auto;
+}
+
+.resource-link:hover {
+  color: #e8722d;
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .resources-hero {
+    padding: 40px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .category-header h2 {
+    font-size: 1.6em;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .resource-category {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.5em;
+  }
+
+  .category-header h2 {
+    font-size: 1.4em;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <a href="/wwii-history/" class="site-logo">
+      <h1>WWII History</h1>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('.site-nav');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('active');
+    });
+  </script>
+</header><nav class="site-nav">
+  <ul class="nav-list">
+    <li><a href="/wwii-history/">Home</a></li>
+    <li><a href="/wwii-history/timeline">Timeline</a></li>
+    <li><a href="/wwii-history/causes">Causes</a></li>
+    <li class="nav-submenu">
+      <a href="/wwii-history/theaters">Theaters</a>
+      <ul class="submenu">
+        <li><a href="/wwii-history/theaters/european-theater">European Theater</a></li>
+        <li><a href="/wwii-history/theaters/pacific-theater">Pacific Theater</a></li>
+      </ul>
+    </li>
+    <li><a href="/wwii-history/battles">Battles</a></li>
+    <li><a href="/wwii-history/figures">Key Figures</a></li>
+    <li><a href="/wwii-history/technology">Technology</a></li>
+    <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+    <li><a href="/wwii-history/home-front">Home Front</a></li>
+    <li><a href="/wwii-history/resources">Resources</a></li>
+    <li><a href="/wwii-history/about">About</a></li>
+  </ul>
+</nav><main class="resources-main">
+  <section class="resources-hero">
+    <div class="hero-content">
+      <h1>Educational Resources</h1>
+      <p>Curated learning materials for students and history enthusiasts exploring World War II</p>
+    </div>
+  </section>
+
+  <div class="resources-container">
+    <section class="resource-category">
+      <div class="category-header">
+        <h2>Documentaries</h2>
+        <p class="category-description">In-depth video documentaries providing comprehensive overviews of WWII events, battles, and historical perspectives.</p>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>The World at War</h3>
+            <p class="resource-type">Documentary Series</p>
+            <p>A landmark 26-part British television documentary series examining the events and impact of World War II from multiple perspectives.</p>
+            <a href="#" class="resource-link">Learn More →</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>Ken Burns' The War</h3>
+            <p class="resource-type">Documentary Series</p>
+            <p>An American documentary series exploring WWII through personal accounts, archival footage, and interviews with veterans and civilians.</p>
+            <a href="#" class="resource-link">Learn More →</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>World War II in Color</h3>
+            <p class="resource-type">Documentary Series</p>
+            <p>Colorized footage brings WWII history to life, presenting the war in vivid detail previously unseen in historical documentaries.</p>
+            <a href="#" class="resource-link">Learn More →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="resource-category">
+      <div class="category-header">
+        <h2>Books & Publications</h2>
+        <p class="category-description">Essential reading from historians, veterans, and scholars covering all aspects of World War II.</p>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>The Second World War</h3>
+            <p class="resource-author">by Winston Churchill</p>
+            <p>A comprehensive six-volume account by the British Prime Minister himself, providing intimate insight into WWII leadership and strategy.</p>
+            <a href="#" class="resource-link">Learn More →</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>The Rise and Fall of the Third Reich</h3>
+            <p class="resource-author">by William L. Shirer</p>
+            <p>A definitive history of Nazi Germany's ascent to power and its ultimate downfall during World War II.</p>
+            <a href="#" class="resource-link">Learn More →</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>D-Day: The Invasion of Normandy</h3>
+            <p class="resource-author">by Stephen E. Ambrose</p>
+            <p>A gripping account of Operation Overlord, examining the planning, execution, and human stories of the D-Day invasion.</p>
+            <a href="#" class="resource-link">Learn More →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="resource-category">
+      <div class="category-header">
+        <h2>Museums & Archives</h2>
+        <p class="category-description">World-renowned institutions preserving WWII artifacts, documents, and historical collections.</p>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>The National WWII Museum</h3>
+            <p class="resource-location">New Orleans, USA</p>
+            <p>One of the world's largest and most comprehensive WWII museums, featuring interactive exhibits, personal stories, and authentic artifacts.</p>
+            <a href="#" class="resource-link">Visit Website →</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>Imperial War Museum</h3>
+            <p class="resource-location">London, UK</p>
+            <p>Europe's leading museum of conflict, housing extensive WWII collections including weapons, uniforms, documents, and survivor testimonies.</p>
+            <a href="#" class="resource-link">Visit Website →</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>The U.S. Holocaust Memorial Museum</h3>
+            <p class="resource-location">Washington, D.C., USA</p>
+            <p>Dedicated to documenting, interpreting, and preserving the history of the Holocaust and WWII persecution.</p>
+            <a href="#" class="resource-link">Visit Website →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="resource-category">
+      <div class="category-header">
+        <h2>Online Archives & Collections</h2>
+        <p class="category-description">Digital databases providing access to primary sources, photographs, and historical documents.</p>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>Library of Congress: Veterans History Project</h3>
+            <p class="resource-type">Digital Archive</p>
+            <p>Over 100,000 first-person accounts from American military veterans, including WWII participants from all service branches.</p>
+            <a href="#" class="resource-link">Explore Archive →</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>The National Archives Records Administration</h3>
+            <p class="resource-type">Digital Archive</p>
+            <p>Official U.S. government records including military records, photographs, maps, and official documentation from WWII.</p>
+            <a href="#" class="resource-link">Explore Archive →</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>Yad Vashem Digital Collections</h3>
+            <p class="resource-type">Digital Archive</p>
+            <p>The World Holocaust Remembrance Center's extensive collection of photographs, testimonies, and documents related to the Holocaust.</p>
+            <a href="#" class="resource-link">Explore Archive →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="resource-category">
+      <div class="category-header">
+        <h2>Study Guides & Educational Materials</h2>
+        <p class="category-description">Classroom resources, lesson plans, and study materials for educators and students.</p>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>Teaching the Holocaust</h3>
+            <p class="resource-type">Educational Guide</p>
+            <p>Comprehensive curriculum resources and pedagogical strategies for teaching Holocaust history in secondary and higher education.</p>
+            <a href="#" class="resource-link">Access Guide →</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>WWII Timelines & Maps</h3>
+            <p class="resource-type">Study Material</p>
+            <p>Interactive timelines, detailed battle maps, and chronological resources for understanding the progression of the war.</p>
+            <a href="#" class="resource-link">View Materials →</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="card-content">
+            <h3>Student Research Guides</h3>
+            <p class="resource-type">Educational Guide</p>
+            <p>Structured guides for research papers, essays, and projects covering major WWII topics and historical themes.</p>
+            <a href="#" class="resource-link">Access Guides →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>WWII History</h3>
+      <p>An authoritative resource for World War II history, education, and research.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/wwii-history/timeline">Timeline</a></li>
+        <li><a href="/wwii-history/battles">Major Battles</a></li>
+        <li><a href="/wwii-history/figures">Key Figures</a></li>
+        <li><a href="/wwii-history/resources">Resources</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="/wwii-history/causes">Causes of WWII</a></li>
+        <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+        <li><a href="/wwii-history/technology">Technology</a></li>
+        <li><a href="/wwii-history/home-front">Home Front</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="/wwii-history/about">About Us</a></li>
+        <li><a href="/wwii-history/contact">Contact</a></li>
+        <li><a href="/wwii-history/privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 WWII History. All rights reserved. Dedicated to historical accuracy and education.</p>
+  </div>
+</footer></body></html>
