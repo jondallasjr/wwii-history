@@ -1,0 +1,1051 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>D-Day: Operation Overlord</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #1a3a52;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header Styles */
+.site-header {
+  background-color: #1a3a52;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.site-logo h1 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.site-logo:hover {
+  opacity: 0.9;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Navigation Styles */
+.site-nav {
+  background-color: #1a3a52;
+  padding: 0 20px;
+}
+
+.nav-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list a {
+  display: block;
+  padding: 12px 15px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-size: 0.95em;
+}
+
+.nav-list a:hover {
+  color: #e8722d;
+  background-color: rgba(232, 114, 45, 0.1);
+}
+
+.nav-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0f2436;
+  flex-direction: column;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-submenu:hover .submenu {
+  display: flex;
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenu li:last-child a {
+  border-bottom: none;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #0f2436;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e8722d;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.3s ease;
+  }
+
+  .site-nav.active {
+    max-height: 500px;
+    padding: 15px 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .submenu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-submenu.active .submenu {
+    display: flex;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* Major Battles - Page CSS */
+.page-container {
+  background-color: #f9f9f9;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #1a3a52 0%, #0f2436 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.battles-intro {
+  margin-bottom: 50px;
+}
+
+.battles-intro p {
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.battles-grid {
+  margin-bottom: 60px;
+}
+
+.battles-grid .content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.battle-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.battle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.battle-card-header {
+  background-color: #e8722d;
+  color: white;
+  padding: 25px 20px;
+  border-bottom: 4px solid #d45a1a;
+}
+
+.battle-card-header h3 {
+  font-size: 1.3em;
+  margin: 0 0 10px 0;
+  color: white;
+}
+
+.battle-date {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.battle-card-body {
+  padding: 25px 20px;
+  flex-grow: 1;
+}
+
+.battle-theater {
+  color: #e8722d;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.battle-card-body p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+}
+
+.battle-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.stat {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #e8722d;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.85em;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.2em;
+  color: #1a3a52;
+  font-weight: 700;
+}
+
+.battle-card-footer {
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #e8722d;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #d45a1a;
+  text-decoration: none;
+}
+
+.battles-summary {
+  background-color: white;
+  padding: 60px 20px;
+  margin-top: 60px;
+  border-top: 2px solid #e8722d;
+}
+
+.battles-summary h2 {
+  font-size: 2em;
+  color: #1a3a52;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.summary-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.summary-item h4 {
+  color: #e8722d;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-item p {
+  color: #666;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 40px 20px;
+  }
+
+  .header-content h1 {
+    font-size: 1.8em;
+  }
+
+  .subtitle {
+    font-size: 1em;
+  }
+
+  .battles-grid .content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .battle-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .battles-summary h2 {
+    font-size: 1.5em;
+  }
+}
+
+/* D-Day: Operation Overlord - Page CSS */
+.dday-intro {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.dday-intro p {
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.dday-section {
+  margin-bottom: 50px;
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.dday-section h2 {
+  font-size: 2em;
+  color: #1a3a52;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #e8722d;
+}
+
+.section-content {
+  color: #555;
+  line-height: 1.7;
+}
+
+.section-content p {
+  margin-bottom: 15px;
+}
+
+.dday-list {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.dday-list li {
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.dday-list li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #e8722d;
+  font-weight: bold;
+}
+
+.force-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.force-stat-box {
+  background: linear-gradient(135deg, #1a3a52 0%, #0f2436 100%);
+  color: white;
+  padding: 30px 20px;
+  border-radius: 8px;
+  text-align: center;
+  border-left: 4px solid #e8722d;
+}
+
+.force-stat-number {
+  display: block;
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.force-stat-label {
+  display: block;
+  font-size: 0.95em;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.commanders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.commander-card {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 6px;
+  border-left: 4px solid #e8722d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.commander-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.commander-card h4 {
+  font-size: 1.2em;
+  color: #1a3a52;
+  margin-bottom: 8px;
+}
+
+.commander-role {
+  color: #e8722d;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.commander-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95em;
+  margin: 0;
+}
+
+.beaches-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.beach-description {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+  border-top: 3px solid #e8722d;
+}
+
+.beach-description h4 {
+  font-size: 1.1em;
+  color: #1a3a52;
+  margin-bottom: 12px;
+}
+
+.beach-description p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95em;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .dday-section {
+    padding: 25px 15px;
+  }
+
+  .dday-section h2 {
+    font-size: 1.5em;
+  }
+
+  .force-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .commanders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .beaches-content {
+    grid-template-columns: 1fr;
+  }
+}.dday-intro {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.dday-intro p {
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.dday-section {
+  margin-bottom: 50px;
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.dday-section h2 {
+  font-size: 2em;
+  color: #1a3a52;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #e8722d;
+}
+
+.section-content {
+  color: #555;
+  line-height: 1.7;
+}
+
+.section-content p {
+  margin-bottom: 15px;
+}
+
+.dday-list {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.dday-list li {
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.dday-list li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #e8722d;
+  font-weight: bold;
+}
+
+.force-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.force-stat-box {
+  background: linear-gradient(135deg, #1a3a52 0%, #0f2436 100%);
+  color: white;
+  padding: 30px 20px;
+  border-radius: 8px;
+  text-align: center;
+  border-left: 4px solid #e8722d;
+}
+
+.force-stat-number {
+  display: block;
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.force-stat-label {
+  display: block;
+  font-size: 0.95em;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.commanders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.commander-card {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 6px;
+  border-left: 4px solid #e8722d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.commander-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.commander-card h4 {
+  font-size: 1.2em;
+  color: #1a3a52;
+  margin-bottom: 8px;
+}
+
+.commander-role {
+  color: #e8722d;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.commander-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95em;
+  margin: 0;
+}
+
+.beaches-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.beach-description {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+  border-top: 3px solid #e8722d;
+}
+
+.beach-description h4 {
+  font-size: 1.1em;
+  color: #1a3a52;
+  margin-bottom: 12px;
+}
+
+.beach-description p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95em;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .dday-section {
+    padding: 25px 15px;
+  }
+
+  .dday-section h2 {
+    font-size: 1.5em;
+  }
+
+  .force-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .commanders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .beaches-content {
+    grid-template-columns: 1fr;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <a href="/wwii-history/" class="site-logo">
+      <h1>WWII History</h1>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('.site-nav');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('active');
+    });
+  </script>
+</header><nav class="site-nav">
+  <ul class="nav-list">
+    <li><a href="/wwii-history/">Home</a></li>
+    <li><a href="/wwii-history/timeline">Timeline</a></li>
+    <li><a href="/wwii-history/causes">Causes</a></li>
+    <li class="nav-submenu">
+      <a href="/wwii-history/theaters">Theaters</a>
+      <ul class="submenu">
+        <li><a href="/wwii-history/theaters/european-theater">European Theater</a></li>
+        <li><a href="/wwii-history/theaters/pacific-theater">Pacific Theater</a></li>
+      </ul>
+    </li>
+    <li><a href="/wwii-history/battles">Battles</a></li>
+    <li><a href="/wwii-history/figures">Key Figures</a></li>
+    <li><a href="/wwii-history/technology">Technology</a></li>
+    <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+    <li><a href="/wwii-history/home-front">Home Front</a></li>
+    <li><a href="/wwii-history/resources">Resources</a></li>
+    <li><a href="/wwii-history/about">About</a></li>
+  </ul>
+</nav><div class="page-container">
+  <div class="page-header">
+    <div class="content-wrapper">
+      <div class="header-content">
+        <h1>D-Day: Operation Overlord</h1>
+        <p class="subtitle">The Normandy Invasion of June 6, 1944</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="dday-intro">
+      <p>Operation Overlord, commonly known as D-Day, stands as one of the most significant military operations in history. On June 6, 1944, Allied forces launched an amphibious assault on the Normandy coast of Nazi-occupied France, marking the beginning of the liberation of Western Europe. This massive coordinated invasion involved meticulous planning, unprecedented resources, and extraordinary courage from hundreds of thousands of soldiers.</p>
+    </div>
+
+    <section class="dday-section">
+      <h2>Planning and Preparation</h2>
+      <div class="section-content">
+        <p>The planning for Operation Overlord began months before the actual invasion. Supreme Commander Dwight D. Eisenhower coordinated with British, Canadian, American, and other Allied forces to develop a strategy that would establish a beachhead in Normandy and break the Atlantic Wall—Germany's defensive fortifications along the French coast.</p>
+        <p>Key considerations included:</p>
+        <ul class="dday-list">
+          <li><strong>Deception:</strong> Operation Fortitude created an elaborate hoax to convince German High Command that the invasion would occur at Pas-de-Calais, not Normandy.</li>
+          <li><strong>Naval Superiority:</strong> The Allies achieved total naval dominance, essential for protecting the invasion fleet and supporting ground operations.</li>
+          <li><strong>Air Superiority:</strong> Months of bombing campaigns weakened German air forces and damaged infrastructure.</li>
+          <li><strong>Logistics:</strong> Unprecedented supply lines were established to sustain the invasion and subsequent operations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="dday-section">
+      <h2>The Invasion Force</h2>
+      <div class="section-content">
+        <div class="force-stats">
+          <div class="force-stat-box">
+            <span class="force-stat-number">156,000+</span>
+            <span class="force-stat-label">Troops Landed</span>
+          </div>
+          <div class="force-stat-box">
+            <span class="force-stat-number">5,000+</span>
+            <span class="force-stat-label">Ships & Boats</span>
+          </div>
+          <div class="force-stat-box">
+            <span class="force-stat-number">11,000</span>
+            <span class="force-stat-label">Aircraft</span>
+          </div>
+          <div class="force-stat-box">
+            <span class="force-stat-number">10,000+</span>
+            <span class="force-stat-label">Casualties</span>
+          </div>
+        </div>
+        <p>The invasion force consisted of American, British, and Canadian troops, supported by forces from Free France, Poland, and other nations. The beaches were designated with code names: Utah, Omaha, Gold, Juno, and Sword from west to east. Airborne divisions were dropped behind enemy lines to secure key positions and prevent German reinforcements from reaching the beach.</p>
+      </div>
+    </section>
+
+    <section class="dday-section">
+      <h2>Key Commanders</h2>
+      <div class="commanders-grid">
+        <div class="commander-card">
+          <h4>Dwight D. Eisenhower</h4>
+          <p class="commander-role">Supreme Commander, Allied Expeditionary Force</p>
+          <p>Eisenhower coordinated all aspects of Operation Overlord and made the critical decision to proceed despite uncertain weather conditions on June 6.</p>
+        </div>
+        <div class="commander-card">
+          <h4>Bernard Montgomery</h4>
+          <p class="commander-role">Commander, 21st Army Group</p>
+          <p>Montgomery oversaw ground operations and coordinated the assault across the Normandy beaches, establishing the beachhead and breakout strategy.</p>
+        </div>
+        <div class="commander-card">
+          <h4>Omar Bradley</h4>
+          <p class="commander-role">Commander, First United States Army</p>
+          <p>Bradley led American forces, including the tragic assault on Omaha Beach, one of the bloodiest sectors of the invasion.</p>
+        </div>
+        <div class="commander-card">
+          <h4>Erwin Rommel</h4>
+          <p class="commander-role">German Field Marshal</p>
+          <p>Rommel commanded German defenses in Normandy but was absent during the invasion, visiting his wife on her birthday.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dday-section">
+      <h2>The Beaches and Fighting</h2>
+      <div class="section-content">
+        <p>Each beach presented unique challenges and varying levels of resistance:</p>
+        <div class="beaches-content">
+          <div class="beach-description">
+            <h4>Omaha Beach (American)</h4>
+            <p>The most heavily defended beach, where American forces faced intense German firepower. High casualties occurred due to poor naval bombardment effectiveness and strong defensive positions. Approximately 2,400 American casualties occurred here.</p>
+          </div>
+          <div class="beach-description">
+            <h4>Utah Beach (American)</h4>
+            <p>Despite landing in the wrong location due to strong currents, American forces successfully secured this beach with lower casualties than Omaha, aided by effective naval support and airborne operations.</p>
+          </div>
+          <div class="beach-description">
+            <h4>Gold Beach (British)</h4>
+            <p>British forces, supported by specialized tanks and engineering units, successfully captured this beach and linked up with Canadian forces. The beach was secured with moderate casualties.</p>
+          </div>
+          <div class="beach-description">
+            <h4>Juno Beach (Canadian)</h4>
+            <p>Canadian forces launched an aggressive assault, achieving their objectives despite initial heavy opposition. The beach was secured by early afternoon, and Canadians advanced further inland than any other force.</p>
+          </div>
+          <div class="beach-description">
+            <h4>Sword Beach (British)</h4>
+            <p>The easternmost beach, where British commandos and paratroopers secured crucial positions. This beach link with airborne forces and established defenses against German counterattacks from the east.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dday-section">
+      <h2>Strategic Impact</h2>
+      <div class="section-content">
+        <p>D-Day achieved its primary objective: establishing a secure beachhead in Nazi-occupied France. The strategic consequences were profound:</p>
+        <ul class="dday-list">
+          <li><strong>Second Front in Europe:</strong> The invasion opened a Western Front, forcing Germany to fight a two-front war with Soviet forces pushing from the east.</li>
+          <li><strong>Liberation Path:</strong> D-Day initiated the liberation of France and Western Europe, with Paris liberated within 100 days.</li>
+          <li><strong>German Strategic Error:</strong> Hitler's delay in releasing panzer reserves and overestimation of German capabilities prevented effective counterattacks.</li>
+          <li><strong>Momentum Shift:</strong> The successful invasion marked a decisive turning point, demonstrating Allied military superiority and determination.</li>
+          <li><strong>Psychological Impact:</strong> D-Day boosted Allied morale and undermined German confidence in their ability to maintain occupation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="dday-section">
+      <h2>Aftermath and Legacy</h2>
+      <div class="section-content">
+        <p>The Normandy invasion was followed by the breakout from the beachhead and the subsequent campaign across France. Within eleven months of D-Day, German forces had surrendered unconditionally. Today, D-Day is remembered as a defining moment in military history—a testament to the planning, courage, and sacrifice required to achieve victory against Nazi tyranny. The beaches of Normandy serve as a permanent memorial to those who fought and fell during Operation Overlord.</p>
+      </div>
+    </section>
+  </div>
+</div><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>WWII History</h3>
+      <p>An authoritative resource for World War II history, education, and research.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/wwii-history/timeline">Timeline</a></li>
+        <li><a href="/wwii-history/battles">Major Battles</a></li>
+        <li><a href="/wwii-history/figures">Key Figures</a></li>
+        <li><a href="/wwii-history/resources">Resources</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="/wwii-history/causes">Causes of WWII</a></li>
+        <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+        <li><a href="/wwii-history/technology">Technology</a></li>
+        <li><a href="/wwii-history/home-front">Home Front</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="/wwii-history/about">About Us</a></li>
+        <li><a href="/wwii-history/contact">Contact</a></li>
+        <li><a href="/wwii-history/privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 WWII History. All rights reserved. Dedicated to historical accuracy and education.</p>
+  </div>
+</footer></body></html>
