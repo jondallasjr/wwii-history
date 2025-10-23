@@ -1,0 +1,976 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Major Battles</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #1a3a52;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header Styles */
+.site-header {
+  background-color: #1a3a52;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.site-logo h1 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.site-logo:hover {
+  opacity: 0.9;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Navigation Styles */
+.site-nav {
+  background-color: #1a3a52;
+  padding: 0 20px;
+}
+
+.nav-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list a {
+  display: block;
+  padding: 12px 15px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-size: 0.95em;
+}
+
+.nav-list a:hover {
+  color: #e8722d;
+  background-color: rgba(232, 114, 45, 0.1);
+}
+
+.nav-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0f2436;
+  flex-direction: column;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-submenu:hover .submenu {
+  display: flex;
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenu li:last-child a {
+  border-bottom: none;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #0f2436;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e8722d;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.3s ease;
+  }
+
+  .site-nav.active {
+    max-height: 500px;
+    padding: 15px 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .submenu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-submenu.active .submenu {
+    display: flex;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* Major Battles - Page CSS */
+.page-container {
+  background-color: #f9f9f9;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #1a3a52 0%, #0f2436 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.battles-intro {
+  margin-bottom: 50px;
+}
+
+.battles-intro p {
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.battles-grid {
+  margin-bottom: 60px;
+}
+
+.battles-grid .content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.battle-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.battle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.battle-card-header {
+  background-color: #e8722d;
+  color: white;
+  padding: 25px 20px;
+  border-bottom: 4px solid #d45a1a;
+}
+
+.battle-card-header h3 {
+  font-size: 1.3em;
+  margin: 0 0 10px 0;
+  color: white;
+}
+
+.battle-date {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.battle-card-body {
+  padding: 25px 20px;
+  flex-grow: 1;
+}
+
+.battle-theater {
+  color: #e8722d;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.battle-card-body p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+}
+
+.battle-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.stat {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #e8722d;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.85em;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.2em;
+  color: #1a3a52;
+  font-weight: 700;
+}
+
+.battle-card-footer {
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #e8722d;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #d45a1a;
+  text-decoration: none;
+}
+
+.battles-summary {
+  background-color: white;
+  padding: 60px 20px;
+  margin-top: 60px;
+  border-top: 2px solid #e8722d;
+}
+
+.battles-summary h2 {
+  font-size: 2em;
+  color: #1a3a52;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.summary-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.summary-item h4 {
+  color: #e8722d;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-item p {
+  color: #666;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 40px 20px;
+  }
+
+  .header-content h1 {
+    font-size: 1.8em;
+  }
+
+  .subtitle {
+    font-size: 1em;
+  }
+
+  .battles-grid .content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .battle-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .battles-summary h2 {
+    font-size: 1.5em;
+  }
+}.page-container {
+  background-color: #f9f9f9;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #1a3a52 0%, #0f2436 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.battles-intro {
+  margin-bottom: 50px;
+}
+
+.battles-intro p {
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.battles-grid {
+  margin-bottom: 60px;
+}
+
+.battles-grid .content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.battle-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.battle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.battle-card-header {
+  background-color: #e8722d;
+  color: white;
+  padding: 25px 20px;
+  border-bottom: 4px solid #d45a1a;
+}
+
+.battle-card-header h3 {
+  font-size: 1.3em;
+  margin: 0 0 10px 0;
+  color: white;
+}
+
+.battle-date {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.battle-card-body {
+  padding: 25px 20px;
+  flex-grow: 1;
+}
+
+.battle-theater {
+  color: #e8722d;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.battle-card-body p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+}
+
+.battle-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.stat {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #e8722d;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.85em;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.2em;
+  color: #1a3a52;
+  font-weight: 700;
+}
+
+.battle-card-footer {
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #e8722d;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #d45a1a;
+  text-decoration: none;
+}
+
+.battles-summary {
+  background-color: white;
+  padding: 60px 20px;
+  margin-top: 60px;
+  border-top: 2px solid #e8722d;
+}
+
+.battles-summary h2 {
+  font-size: 2em;
+  color: #1a3a52;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.summary-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.summary-item h4 {
+  color: #e8722d;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-item p {
+  color: #666;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 40px 20px;
+  }
+
+  .header-content h1 {
+    font-size: 1.8em;
+  }
+
+  .subtitle {
+    font-size: 1em;
+  }
+
+  .battles-grid .content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .battle-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .battles-summary h2 {
+    font-size: 1.5em;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <a href="/wwii-history/" class="site-logo">
+      <h1>WWII History</h1>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('.site-nav');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('active');
+    });
+  </script>
+</header><nav class="site-nav">
+  <ul class="nav-list">
+    <li><a href="/wwii-history/">Home</a></li>
+    <li><a href="/wwii-history/timeline">Timeline</a></li>
+    <li><a href="/wwii-history/causes">Causes</a></li>
+    <li class="nav-submenu">
+      <a href="/wwii-history/theaters">Theaters</a>
+      <ul class="submenu">
+        <li><a href="/wwii-history/theaters/european-theater">European Theater</a></li>
+        <li><a href="/wwii-history/theaters/pacific-theater">Pacific Theater</a></li>
+      </ul>
+    </li>
+    <li><a href="/wwii-history/battles">Battles</a></li>
+    <li><a href="/wwii-history/figures">Key Figures</a></li>
+    <li><a href="/wwii-history/technology">Technology</a></li>
+    <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+    <li><a href="/wwii-history/home-front">Home Front</a></li>
+    <li><a href="/wwii-history/resources">Resources</a></li>
+    <li><a href="/wwii-history/about">About</a></li>
+  </ul>
+</nav><main class="page-container">
+  <section class="page-header">
+    <div class="header-content">
+      <h1>Major Battles of World War II</h1>
+      <p class="subtitle">Detailed accounts of pivotal engagements that shaped the course of history</p>
+    </div>
+  </section>
+
+  <section class="battles-intro">
+    <div class="content-wrapper">
+      <p>World War II was defined by numerous decisive battles across multiple theaters. These engagements determined military strategy, influenced political outcomes, and profoundly affected millions of lives. Below is a comprehensive overview of the major battles that defined the conflict.</p>
+    </div>
+  </section>
+
+  <section class="battles-grid">
+    <div class="content-wrapper">
+      <div class="battle-card">
+        <div class="battle-card-header">
+          <h3>D-Day: Operation Overlord</h3>
+          <span class="battle-date">June 6, 1944</span>
+        </div>
+        <div class="battle-card-body">
+          <p class="battle-theater">European Theater</p>
+          <p>The largest amphibious invasion in history. Allied forces landed on the beaches of Normandy, beginning the liberation of Western Europe from Nazi occupation.</p>
+          <div class="battle-stats">
+            <div class="stat">
+              <span class="stat-label">Forces Involved</span>
+              <span class="stat-value">156,000 troops</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Casualties</span>
+              <span class="stat-value">~425,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="battle-card-footer">
+          <a href="/wwii-history/battles/d-day" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+
+      <div class="battle-card">
+        <div class="battle-card-header">
+          <h3>Battle of Stalingrad</h3>
+          <span class="battle-date">August 1942 - February 1943</span>
+        </div>
+        <div class="battle-card-body">
+          <p class="battle-theater">Eastern Front</p>
+          <p>A turning point on the Eastern Front. Soviet forces halted and reversed the German advance, marking the beginning of Germany's retreat from Soviet territory.</p>
+          <div class="battle-stats">
+            <div class="stat">
+              <span class="stat-label">Duration</span>
+              <span class="stat-value">6 months</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Casualties</span>
+              <span class="stat-value">~2 million</span>
+            </div>
+          </div>
+        </div>
+        <div class="battle-card-footer">
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+
+      <div class="battle-card">
+        <div class="battle-card-header">
+          <h3>Battle of Midway</h3>
+          <span class="battle-date">June 4-7, 1942</span>
+        </div>
+        <div class="battle-card-body">
+          <p class="battle-theater">Pacific Theater</p>
+          <p>A naval battle that shifted the balance of power in the Pacific. American forces defeated a larger Japanese fleet, ending Japan's naval superiority.</p>
+          <div class="battle-stats">
+            <div class="stat">
+              <span class="stat-label">Duration</span>
+              <span class="stat-value">4 days</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Ships Lost</span>
+              <span class="stat-value">8 total</span>
+            </div>
+          </div>
+        </div>
+        <div class="battle-card-footer">
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+
+      <div class="battle-card">
+        <div class="battle-card-header">
+          <h3>Battle of the Bulge</h3>
+          <span class="battle-date">December 1944 - January 1945</span>
+        </div>
+        <div class="battle-card-body">
+          <p class="battle-theater">European Theater</p>
+          <p>Germany's last major offensive in Western Europe. Despite initial surprise, Allied forces contained and defeated the German advance, accelerating the end of the war in Europe.</p>
+          <div class="battle-stats">
+            <div class="stat">
+              <span class="stat-label">Duration</span>
+              <span class="stat-value">6 weeks</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Casualties</span>
+              <span class="stat-value">~600,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="battle-card-footer">
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+
+      <div class="battle-card">
+        <div class="battle-card-header">
+          <h3>Battle of El Alamein</h3>
+          <span class="battle-date">October-November 1942</span>
+        </div>
+        <div class="battle-card-body">
+          <p class="battle-theater">North Africa</p>
+          <p>A critical victory that stopped Axis advances in North Africa. British forces under Montgomery defeated German forces, marking a turning point in the Mediterranean campaign.</p>
+          <div class="battle-stats">
+            <div class="stat">
+              <span class="stat-label">Duration</span>
+              <span class="stat-value">2 months</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Casualties</span>
+              <span class="stat-value">~80,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="battle-card-footer">
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+
+      <div class="battle-card">
+        <div class="battle-card-header">
+          <h3>Battle of Iwo Jima</h3>
+          <span class="battle-date">February-March 1945</span>
+        </div>
+        <div class="battle-card-body">
+          <p class="battle-theater">Pacific Theater</p>
+          <p>A grueling island campaign. American forces secured a critical airbase for operations against Japan, though at tremendous cost in casualties.</p>
+          <div class="battle-stats">
+            <div class="stat">
+              <span class="stat-label">Duration</span>
+              <span class="stat-value">5 weeks</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Casualties</span>
+              <span class="stat-value">~70,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="battle-card-footer">
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="battles-summary">
+    <div class="content-wrapper">
+      <h2>Understanding WWII Battles</h2>
+      <div class="summary-content">
+        <div class="summary-item">
+          <h4>Strategic Importance</h4>
+          <p>Each major battle contributed to the overall war strategy, whether controlling territory, disrupting supply lines, or maintaining morale and momentum.</p>
+        </div>
+        <div class="summary-item">
+          <h4>Human Cost</h4>
+          <p>The casualty figures reflect the unprecedented scale of WWII conflict, affecting military personnel and civilians alike across multiple theaters of war.</p>
+        </div>
+        <div class="summary-item">
+          <h4>Turning Points</h4>
+          <p>Certain battles marked clear turning points in the war's trajectory, shifting momentum and determining the eventual outcome of the conflict.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>WWII History</h3>
+      <p>An authoritative resource for World War II history, education, and research.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/wwii-history/timeline">Timeline</a></li>
+        <li><a href="/wwii-history/battles">Major Battles</a></li>
+        <li><a href="/wwii-history/figures">Key Figures</a></li>
+        <li><a href="/wwii-history/resources">Resources</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="/wwii-history/causes">Causes of WWII</a></li>
+        <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+        <li><a href="/wwii-history/technology">Technology</a></li>
+        <li><a href="/wwii-history/home-front">Home Front</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="/wwii-history/about">About Us</a></li>
+        <li><a href="/wwii-history/contact">Contact</a></li>
+        <li><a href="/wwii-history/privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 WWII History. All rights reserved. Dedicated to historical accuracy and education.</p>
+  </div>
+</footer></body></html>
