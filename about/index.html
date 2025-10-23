@@ -1,0 +1,629 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>About This Site</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #1a3a52;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header Styles */
+.site-header {
+  background-color: #1a3a52;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.site-logo h1 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.site-logo:hover {
+  opacity: 0.9;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Navigation Styles */
+.site-nav {
+  background-color: #1a3a52;
+  padding: 0 20px;
+}
+
+.nav-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list a {
+  display: block;
+  padding: 12px 15px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-size: 0.95em;
+}
+
+.nav-list a:hover {
+  color: #e8722d;
+  background-color: rgba(232, 114, 45, 0.1);
+}
+
+.nav-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0f2436;
+  flex-direction: column;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-submenu:hover .submenu {
+  display: flex;
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenu li:last-child a {
+  border-bottom: none;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #0f2436;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #e8722d;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.3s ease;
+  }
+
+  .site-nav.active {
+    max-height: 500px;
+    padding: 15px 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .submenu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-submenu.active .submenu {
+    display: flex;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* About This Site - Page CSS */
+.about-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.about-container {
+  width: 100%;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #1a3a52;
+}
+
+.about-hero h1 {
+  font-size: 2.5em;
+  color: #1a3a52;
+  margin-bottom: 15px;
+}
+
+.about-intro {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.8;
+}
+
+.about-section {
+  margin-bottom: 40px;
+}
+
+.about-section h2 {
+  font-size: 1.8em;
+  color: #1a3a52;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.about-section p {
+  font-size: 1em;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.standards-list,
+.sources-list,
+.coverage-list {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.standards-list li,
+.sources-list li,
+.coverage-list li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  color: #444;
+  line-height: 1.6;
+}
+
+.standards-list li:before,
+.sources-list li:before,
+.coverage-list li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #e8722d;
+  font-size: 1.2em;
+}
+
+.coverage-list strong {
+  color: #1a3a52;
+}
+
+.about-contact {
+  background-color: #f5f5f5;
+  padding: 30px;
+  border-radius: 4px;
+  margin-top: 50px;
+}
+
+.about-contact h2 {
+  border-bottom-color: #1a3a52;
+}
+
+.about-contact a {
+  color: #1a3a52;
+  font-weight: 500;
+}
+
+.about-contact a:hover {
+  color: #e8722d;
+}
+
+@media (max-width: 768px) {
+  .about-main {
+    padding: 30px 15px;
+  }
+
+  .about-hero h1 {
+    font-size: 2em;
+  }
+
+  .about-section h2 {
+    font-size: 1.4em;
+  }
+
+  .about-intro {
+    font-size: 1.1em;
+  }
+
+  .about-contact {
+    padding: 20px;
+  }
+}.about-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.about-container {
+  width: 100%;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #1a3a52;
+}
+
+.about-hero h1 {
+  font-size: 2.5em;
+  color: #1a3a52;
+  margin-bottom: 15px;
+}
+
+.about-intro {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.8;
+}
+
+.about-section {
+  margin-bottom: 40px;
+}
+
+.about-section h2 {
+  font-size: 1.8em;
+  color: #1a3a52;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.about-section p {
+  font-size: 1em;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.standards-list,
+.sources-list,
+.coverage-list {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.standards-list li,
+.sources-list li,
+.coverage-list li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  color: #444;
+  line-height: 1.6;
+}
+
+.standards-list li:before,
+.sources-list li:before,
+.coverage-list li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #e8722d;
+  font-size: 1.2em;
+}
+
+.coverage-list strong {
+  color: #1a3a52;
+}
+
+.about-contact {
+  background-color: #f5f5f5;
+  padding: 30px;
+  border-radius: 4px;
+  margin-top: 50px;
+}
+
+.about-contact h2 {
+  border-bottom-color: #1a3a52;
+}
+
+.about-contact a {
+  color: #1a3a52;
+  font-weight: 500;
+}
+
+.about-contact a:hover {
+  color: #e8722d;
+}
+
+@media (max-width: 768px) {
+  .about-main {
+    padding: 30px 15px;
+  }
+
+  .about-hero h1 {
+    font-size: 2em;
+  }
+
+  .about-section h2 {
+    font-size: 1.4em;
+  }
+
+  .about-intro {
+    font-size: 1.1em;
+  }
+
+  .about-contact {
+    padding: 20px;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <a href="/wwii-history/" class="site-logo">
+      <h1>WWII History</h1>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('.site-nav');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('active');
+    });
+  </script>
+</header><nav class="site-nav">
+  <ul class="nav-list">
+    <li><a href="/wwii-history/">Home</a></li>
+    <li><a href="/wwii-history/timeline">Timeline</a></li>
+    <li><a href="/wwii-history/causes">Causes</a></li>
+    <li class="nav-submenu">
+      <a href="/wwii-history/theaters">Theaters</a>
+      <ul class="submenu">
+        <li><a href="/wwii-history/theaters/european-theater">European Theater</a></li>
+        <li><a href="/wwii-history/theaters/pacific-theater">Pacific Theater</a></li>
+      </ul>
+    </li>
+    <li><a href="/wwii-history/battles">Battles</a></li>
+    <li><a href="/wwii-history/figures">Key Figures</a></li>
+    <li><a href="/wwii-history/technology">Technology</a></li>
+    <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+    <li><a href="/wwii-history/home-front">Home Front</a></li>
+    <li><a href="/wwii-history/resources">Resources</a></li>
+    <li><a href="/wwii-history/about">About</a></li>
+  </ul>
+</nav><main class="about-main">
+  <div class="about-container">
+    <section class="about-hero">
+      <h1>About This Site</h1>
+      <p class="about-intro">WWII History is a comprehensive, educational resource dedicated to providing accurate, well-researched information about World War II.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Our Mission</h2>
+      <p>We are committed to preserving and sharing the history of World War II for educators, students, historians, and the general public. Our mission is to make this pivotal period of human history accessible, understandable, and relevant to contemporary audiences while maintaining the highest standards of historical accuracy.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Accuracy Standards</h2>
+      <p>Every article, timeline entry, and resource on this site undergoes rigorous fact-checking and review. We:</p>
+      <ul class="standards-list">
+        <li>Consult primary historical documents and reputable academic sources</li>
+        <li>Cross-reference information across multiple authoritative sources</li>
+        <li>Cite our sources transparently throughout all content</li>
+        <li>Correct errors promptly when identified</li>
+        <li>Maintain editorial standards aligned with academic historical research</li>
+        <li>Present multiple perspectives on contested historical interpretations</li>
+      </ul>
+    </section>
+
+    <section class="about-section">
+      <h2>Our Sources</h2>
+      <p>This site draws from a diverse range of scholarly and primary sources, including:</p>
+      <ul class="sources-list">
+        <li>Academic histories and peer-reviewed journals</li>
+        <li>Government archives and official documents</li>
+        <li>Museum collections and institutional research</li>
+        <li>Eyewitness accounts and oral histories</li>
+        <li>Military records and strategic analyses</li>
+        <li>Contemporary newspapers and publications</li>
+      </ul>
+    </section>
+
+    <section class="about-section">
+      <h2>Content Coverage</h2>
+      <p>WWII History covers the major events, figures, and themes of World War II, including:</p>
+      <ul class="coverage-list">
+        <li><strong>Timeline:</strong> Major events from 1939-1945 and their historical context</li>
+        <li><strong>Battles:</strong> Detailed accounts of significant military engagements</li>
+        <li><strong>Key Figures:</strong> Biographies of important political, military, and civilian leaders</li>
+        <li><strong>Theaters of War:</strong> European and Pacific theaters with regional context</li>
+        <li><strong>Technology:</strong> Military innovations and technological advances</li>
+        <li><strong>The Holocaust:</strong> Comprehensive coverage of this pivotal and tragic history</li>
+        <li><strong>Home Front:</strong> Civilian experiences and societal impacts of the war</li>
+      </ul>
+    </section>
+
+    <section class="about-section">
+      <h2>Educational Philosophy</h2>
+      <p>We believe historical education should be comprehensive, balanced, and thought-provoking. Our content is designed to inform readers about what happened, why it happened, and how it continues to shape our world today. We encourage critical thinking and welcome questions about historical interpretation.</p>
+    </section>
+
+    <section class="about-section about-contact">
+      <h2>Get in Touch</h2>
+      <p>Have questions or suggestions? We'd love to hear from you. Please visit our <a href="/wwii-history/contact">contact page</a> to reach out, or explore our <a href="/wwii-history/resources">resources section</a> for additional learning materials.</p>
+    </section>
+  </div>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>WWII History</h3>
+      <p>An authoritative resource for World War II history, education, and research.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/wwii-history/timeline">Timeline</a></li>
+        <li><a href="/wwii-history/battles">Major Battles</a></li>
+        <li><a href="/wwii-history/figures">Key Figures</a></li>
+        <li><a href="/wwii-history/resources">Resources</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="/wwii-history/causes">Causes of WWII</a></li>
+        <li><a href="/wwii-history/holocaust">Holocaust</a></li>
+        <li><a href="/wwii-history/technology">Technology</a></li>
+        <li><a href="/wwii-history/home-front">Home Front</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="/wwii-history/about">About Us</a></li>
+        <li><a href="/wwii-history/contact">Contact</a></li>
+        <li><a href="/wwii-history/privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 WWII History. All rights reserved. Dedicated to historical accuracy and education.</p>
+  </div>
+</footer></body></html>
